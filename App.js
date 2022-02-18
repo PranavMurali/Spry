@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {KeyboardAvoidingView, Platform} from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import 'react-native-gesture-handler'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
+import { useKeepAwake } from 'expo-keep-awake';
+import Homescreen from './screens/Home';
 
 export default function App() {
+  useKeepAwake();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <SafeAreaProvider>
+          <KeyboardAvoidingView 
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
+          >
+          <Stack.Navigator>
+            <Stack.Screen 
+              name="Home" 
+              component={Homescreen} 
+              options={{
+                headerShown: false,
+              }}
+            />
+          </Stack.Navigator>
+          </KeyboardAvoidingView>
+        </SafeAreaProvider>
+      </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
