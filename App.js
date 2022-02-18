@@ -6,7 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 import { useKeepAwake } from 'expo-keep-awake';
-import Homescreen from './screens/Home';
+import Homescreen from './screens/Homescreen';
+import tw from 'tailwind-react-native-classnames';
 
 export default function App() {
   useKeepAwake();
@@ -14,6 +15,7 @@ export default function App() {
       <NavigationContainer>
         <SafeAreaProvider>
           <KeyboardAvoidingView 
+          style={tw`flex-1`} 
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
           >
