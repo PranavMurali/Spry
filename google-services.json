@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "455979811101",
+    "project_id": "spry-c6f20",
+    "storage_bucket": "spry-c6f20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455979811101:android:ce5abfbe507090a96ea1f4",
+        "android_client_info": {
+          "package_name": "com.spry.in"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455979811101-si78n31u2tskouevp6639sp1o8t7k3r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw_pXMt3DGI5m1Ft7wgVC1mwMKQQpmAmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455979811101-si78n31u2tskouevp6639sp1o8t7k3r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
