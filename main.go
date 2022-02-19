@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -64,7 +63,6 @@ func getShortestRoute(c *gin.Context) {
 	dest := c.Query("dest")
 	routes := readRoutes()
 	minDist := 100
-	fmt.Println(source)
 	var shortestRoute Route
 	for _, route := range routes.Routes {
 		sIndex := -1
