@@ -8,8 +8,6 @@ import {
     TouchableOpacity,
 } from "react-native";
 import { Icon } from "react-native-elements";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import tw from "tailwind-react-native-classnames";
 
 const data = [
@@ -57,7 +55,7 @@ const Homescreen = ({ navigation }) => {
                                     {item.title}
                                 </Text>
                                 <Icon
-                                    style={tw`p-2 bg-black rounded-full w-10 mt-4 `}
+                                    style={tw`p-2 bg-black rounded-full w-10 mt-4`}
                                     name="arrowright"
                                     color="white"
                                     type="antdesign"
