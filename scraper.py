@@ -12,7 +12,10 @@ class Route():
         self.routeName = routeName
         self.origin = origin
         self.destination = destination
-        self.places = places.split(', ')
+        self.places = []
+        self.places.append(origin)
+        self.places += places.split(', ')
+        self.places.append(destination)
 
 
 my_url = 'https://opencity.in/explainer/bmtc-bus-routes'

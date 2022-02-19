@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -24,7 +25,7 @@ type RouteList struct {
 	Routes []Route
 }
 
-func getPlaces(c *gin.Context) {
+func readPlaces() PlacesList {
 	content, err := ioutil.ReadFile("./places.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
@@ -34,10 +35,10 @@ func getPlaces(c *gin.Context) {
 	if err != nil {
 		log.Fatal("Error during Unmarshal(): ", err)
 	}
-	c.IndentedJSON(http.StatusOK, placesJson.Places)
+	return placesJson
 }
 
-func getRoutes(c *gin.Context) {
+func readRoutes() RouteList {
 	content, err := ioutil.ReadFile("./routes.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
@@ -47,13 +48,50 @@ func getRoutes(c *gin.Context) {
 	if err != nil {
 		log.Fatal("Error during Unmarshal(): ", err)
 	}
-	c.IndentedJSON(http.StatusOK, routesJson.Routes)
+	return routesJson
+}
+
+func getPlaces(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, readPlaces().Places)
+}
+
+func getRoutes(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, readRoutes().Routes)
+}
+
+func getShortestRoute(c *gin.Context) {
+	source := c.Query("source")
+	dest := c.Query("dest")
+	routes := readRoutes()
+	minDist := 100
+	fmt.Println(source)
+	var shortestRoute Route
+	for _, route := range routes.Routes {
+		sIndex := -1
+		dIndex := -1
+		for i, place := range route.Places {
+			if place == source {
+				sIndex = i
+			}
+			if place == dest {
+				dIndex = i
+			}
+		}
+		if sIndex < dIndex && sIndex != -1 && dIndex != -1 {
+			if dIndex-sIndex < minDist {
+				minDist = dIndex - sIndex
+				shortestRoute = route
+			}
+		}
+	}
+	c.IndentedJSON(http.StatusOK, shortestRoute)
 }
 
 func main() {
 	router := gin.Default()
 	router.GET("/places", getPlaces)
 	router.GET("/routes", getRoutes)
+	router.POST("/shortestroute", getShortestRoute)
 
 	router.Run("localhost:8080")
 }
