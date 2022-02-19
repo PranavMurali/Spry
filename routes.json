@@ -1,0 +1,540 @@
+{
+  "routes": [
+    {
+      "routeName": "2",
+      "origin": "Majestic (KBS)",
+      "destination": "J.P.Nagara PH VI",
+      "places": ["Corporation", "Lalbagh Main Gate", "Jayanagara 4th Block"]
+    },
+    {
+      "routeName": "195",
+      "origin": "Chandra Layout",
+      "destination": "Shivajinagara Bus Station",
+      "places": ["K.R.Circle", "Majestic (KBS)", "Vijayanagara."]
+    },
+    {
+      "routeName": "276",
+      "origin": "Majestic (KBS)",
+      "destination": "Vidyaranyapura",
+      "places": ["Central Talkies", "Devasandra", "Nanjappa Circle,"]
+    },
+    {
+      "routeName": "365",
+      "origin": "Majestic (KBS)",
+      "destination": "Bannerghatta National Park",
+      "places": [
+        "Wilson Garden Police Station",
+        "Hulimavu Gate",
+        "Bannerghatta"
+      ]
+    },
+    {
+      "routeName": "505",
+      "origin": "Electronic City",
+      "destination": "ITPL",
+      "places": [
+        "Bommanahalli,Agara,Marathahalli Bridge",
+        "Kundalahalli Gate,Sri Sri Sathya Sai Hospital."
+      ]
+    },
+    {
+      "routeName": "201R",
+      "origin": "Srinagara",
+      "destination": "C.V.Raman Nagara",
+      "places": ["Banashankari Stage", "III BTM Layout", "Domlur."]
+    },
+    {
+      "routeName": "210A",
+      "origin": "Majestic (KBS)",
+      "destination": "ISRO Layout",
+      "places": [
+        "Corporation",
+        "K.R.Market",
+        "Mahilaseva Samaja",
+        "M.M.Industries",
+        "Kumaraswamy Layout,"
+      ]
+    },
+    {
+      "routeName": "258C",
+      "origin": "Majestic (KBS)",
+      "destination": "Nelamangala",
+      "places": [
+        "Central Talkies",
+        "Yeshwanthpura",
+        "Dasarahalli,Makali",
+        "Binnamangala"
+      ]
+    },
+    {
+      "routeName": "276G",
+      "origin": "Vidyaranyapura",
+      "destination": "Electronic City",
+      "places": [
+        "Sadashivanagara Police Station",
+        "Maharani\u2019s College",
+        "Cauvery Bhavan,"
+      ]
+    },
+    {
+      "routeName": "328M",
+      "origin": "Majestic (KBS)",
+      "destination": "Gunjur",
+      "places": ["Domlur", "HAL Main Gate", "Kundalahalli", "Varthur"]
+    },
+    {
+      "routeName": "331A",
+      "origin": "Shivajinagara Bus Station",
+      "destination": "Kadugodi Bus Station",
+      "places": ["Manipal Hospital", "Graphite India Ltd", "Hope Farm,"]
+    },
+    {
+      "routeName": "333P",
+      "origin": "Majestic (KBS)",
+      "destination": "ITPL",
+      "places": ["Corporation", "Military Accounts", "HAL Main Gate,"]
+    },
+    {
+      "routeName": "333R",
+      "origin": "Majestic (KBS)",
+      "destination": "Marathahalli Bridge",
+      "places": ["Maharani\u2019s College", "Corporation,Domlur HAL Main Gate"]
+    },
+    {
+      "routeName": "333T",
+      "origin": "Nagarabhavi BDA Complex",
+      "destination": "Marathhahalli Bridge",
+      "places": ["HAL Kalyanamantapa", "Marathahalli,"]
+    },
+    {
+      "routeName": "335E",
+      "origin": "Majestic (KBS)",
+      "destination": "Kadugodi Bus Station",
+      "places": ["Mayo Hall", "Manipal Hospital", "AECS Layout", "ITPL"]
+    },
+    {
+      "routeName": "335EA",
+      "origin": "Yeshwantpura",
+      "destination": "ITPL",
+      "places": ["Swastik ,KR Circle", "Corporation"]
+    },
+    {
+      "routeName": "356C",
+      "origin": "Majestic (KBS)",
+      "destination": "Electronic City",
+      "places": [
+        "Wilson Garden Police Station",
+        "Madiwala",
+        "Bommanahalli",
+        "Electronic City,"
+      ]
+    },
+    {
+      "routeName": "356M",
+      "origin": "Majestic (KBS)",
+      "destination": "Anekal",
+      "places": [
+        "Shanthi Nagar",
+        "Bommanahalli",
+        "Electronicity",
+        "Naryana Hurdalaya",
+        "Chandapura"
+      ]
+    },
+    {
+      "routeName": "356N",
+      "origin": "Majestic (KBS)",
+      "destination": "Narayana Hrudayalaya",
+      "places": [
+        "Wilson Garden Police Station",
+        "Madiwala",
+        "Bommanahalli",
+        "Electronic City,"
+      ]
+    },
+    {
+      "routeName": "356P",
+      "origin": "Basavewshwaranagar",
+      "destination": "Electronic City",
+      "places": [
+        "Sujatha",
+        "Majestic (KBS) Wilson Garden Police Station",
+        "Madiwala",
+        "Bommanahalli",
+        "Electronic City"
+      ]
+    },
+    {
+      "routeName": "356Q",
+      "origin": "Majestic (KBS)",
+      "destination": "Electronic City (Wipro Gate)",
+      "places": [
+        "Corporation",
+        "Lalbagh Main Gate",
+        "Southend Circle",
+        "Jayanagar Bus tand",
+        "Jayanagar 9th East Block",
+        "BTM Layout",
+        "Bommanahalli",
+        "Hosa Road",
+        "Electronic City"
+      ]
+    },
+    {
+      "routeName": "360B",
+      "origin": "Majestic (KBS)",
+      "destination": "Attibele",
+      "places": [
+        "Wilson Garden Police Station",
+        "Madiwala",
+        "Bommanahalli",
+        "Electronic City",
+        "Chandapura."
+      ]
+    },
+    {
+      "routeName": "362E",
+      "origin": "Shivajinagara Bus Station",
+      "destination": "Electronic City",
+      "places": [
+        "Indian Express",
+        "Mayo Hall",
+        "Johnson Market",
+        "Adugodi",
+        "Krupanidhi College",
+        "Madiwala",
+        "Bommanahalli"
+      ]
+    },
+    {
+      "routeName": "411K",
+      "origin": "Bannerghatta National Park",
+      "destination": "Marathahalli Bridge",
+      "places": ["HAL Main Gate", "Koramangala 80Ft Road", "Hulimavu Gate"]
+    },
+    {
+      "routeName": "411L",
+      "origin": "Shanti Nagar Bus Station",
+      "destination": "Kadigodi",
+      "places": [
+        "Hombegowda Police Station",
+        "Jn. of 80ft Road,J n of Dupanahalli,HAL Main Gate,Marathahalli Bridge",
+        "Siddapura",
+        "Hope Form"
+      ]
+    },
+    {
+      "routeName": "45G",
+      "origin": "Majestic (KBS)",
+      "destination": "BSK 3rd Stg 3rd Phase",
+      "places": ["Cottonpet Hospital", "Chamrajpet", "Hoskere Halli Cross,"]
+    },
+    {
+      "routeName": "500 KR",
+      "origin": "Kenchenhalli Gate",
+      "destination": "ITPL",
+      "places": [
+        "BEML Complex",
+        "Hoskerehalli Cross",
+        "BSK",
+        "BTM Layout",
+        "Agara",
+        "Kadabisanahalli",
+        "Kundanahalli Gate,Sri Sathhya Sai Hospital"
+      ]
+    },
+    {
+      "routeName": "500A",
+      "origin": "Banashankari",
+      "destination": "Hebbala",
+      "places": ["BTM Layout", "Agara", "K.R.Puram Rly.Stn", "Kalyana Nagara."]
+    },
+    {
+      "routeName": "500D",
+      "origin": "Hebbala",
+      "destination": "Central Silk Board",
+      "places": [
+        "Kalyanagara Bus Stand",
+        "K.R.Puram Rly.Stn,Marathhalli Bridge",
+        "Agara."
+      ]
+    },
+    {
+      "routeName": "500DB",
+      "origin": "Hebbala",
+      "destination": "Hope Form",
+      "places": [
+        "Nagawara Road,Channasandra,KR Puram Rly Station",
+        "Marathalli Bridge",
+        "Sri Sri Sathya Sai Hospital,"
+      ]
+    },
+    {
+      "routeName": "500K",
+      "origin": "Vijayangara",
+      "destination": "ITPL",
+      "places": [
+        "Attiguppe",
+        "Hosakerehalli Cross",
+        "BTM Layout,Agara,Kundalahalli",
+        "Sri Sathya Sai Hospital"
+      ]
+    },
+    {
+      "routeName": "500KM",
+      "origin": "Kalyani Magnum (JP Nagar)",
+      "destination": "ITPL",
+      "places": [
+        "Jayanagar 9th Block East",
+        "SI Apartment (HSR)",
+        "Agara",
+        "Kadabisanahalli",
+        "Kundanahalli Gate",
+        "Sri Sri Sathya Sai Hospital"
+      ]
+    },
+    {
+      "routeName": "500KS",
+      "origin": "Kengeri Housing Board QRTS",
+      "destination": "Kadugodi Bus Station",
+      "places": ["RV College", "Kattariguppe", "BSK", "Marathahalli"]
+    },
+    {
+      "routeName": "500N",
+      "origin": "Vijayangara",
+      "destination": "ITPL",
+      "places": [
+        "Kathriguppe Cross",
+        "Banashankari Bus Stand",
+        "Jn. of Sarjapura Road",
+        "Graphite India Ltd."
+      ]
+    },
+    {
+      "routeName": "500P",
+      "origin": "Chikkalasandra Bus Station",
+      "destination": "ITPL",
+      "places": [
+        "Padamanabhanagar,Devegowda Petrol Bunk,BSK BDA Complex,Mono Type",
+        "Corporation,Banashankari"
+      ]
+    },
+    {
+      "routeName": "500W",
+      "origin": "ISRO Layout",
+      "destination": "ITPL",
+      "places": [
+        "Banashankari",
+        "BTM Layout",
+        "Jn. of Sarjapura Road",
+        "Marathahalli Bridge",
+        "Kundala Halli",
+        "Graphite India Ltd"
+      ]
+    },
+    {
+      "routeName": "505 A",
+      "origin": "Domlur",
+      "destination": "Electronic City (Wipro Gate)",
+      "places": [
+        "Dell IT Complex ",
+        "Koramangala water Tank",
+        "Madiwala",
+        "Singhasandra",
+        "Konappana Agrahara"
+      ]
+    },
+    {
+      "routeName": "600K",
+      "origin": "Vijayangara",
+      "destination": "Narayana Hrudayalaya",
+      "places": [
+        "Kathriguppe Cross",
+        "BTM Layout",
+        "Konappana Agrahara",
+        "Hebbagodi."
+      ]
+    },
+    {
+      "routeName": "600KA",
+      "origin": "Vijayangara",
+      "destination": "Electronic City (PH II)",
+      "places": [
+        "Vijayanagar",
+        "PES College",
+        "BSK",
+        "BTM Layout",
+        "Central Silk Board",
+        "Bommanahalli",
+        "Electronic City",
+        "Electronic city Phase II"
+      ]
+    },
+    {
+      "routeName": "600M",
+      "origin": "Chikkalasandra Bus Station",
+      "destination": "Electronic City (Wipro Gate)",
+      "places": ["Padamanabha nagar,Devegowda Petrol Bunk,BSK"]
+    },
+    {
+      "routeName": "JP10",
+      "origin": "Majestic (KBS)",
+      "destination": "Avalahalli BDA Park",
+      "places": ["Cottonpet Hospital", "Chamrajpet", "Nagendra Block,"]
+    },
+    {
+      "routeName": "250I",
+      "origin": "Majestic (KBS)",
+      "destination": "Chikkabanavara",
+      "places": [
+        "Central Talkies",
+        "Mallehwaram",
+        "Yeshwanthpura",
+        "Jalahalli Cross,"
+      ]
+    },
+    {
+      "routeName": "25M",
+      "origin": "Kuvempu Nagar",
+      "destination": "Basaveshwara Nagar",
+      "places": ["KBS", "Malleshwaram", "Modi Hospital"]
+    },
+    {
+      "routeName": "300B",
+      "origin": "Majestic (KBS)",
+      "destination": "Banasawadi",
+      "places": ["MRC College,Coles Park,Maruti seva nagar"]
+    },
+    {
+      "routeName": "314H",
+      "origin": "Majestic (KBS)",
+      "destination": "Mallesh Palya",
+      "places": ["Corporation", "Mayo Hall,Tippasandra"]
+    },
+    {
+      "routeName": "333W",
+      "origin": "Majestic (KBS)",
+      "destination": "Doddanekunte",
+      "places": ["Corporation,HAL Main Gate", "Marathahalli"]
+    },
+    {
+      "routeName": "333Z",
+      "origin": "Mahalaksmi Layout",
+      "destination": "ITPL",
+      "places": [
+        "Majestic (KBS)",
+        "Mayo Hall Manipal Hospital",
+        "Marathahalli Bridge",
+        "Sri Sri Sathya Sai Hospital"
+      ]
+    },
+    {
+      "routeName": "335T",
+      "origin": "Basaveshwarnagara bus stand",
+      "destination": "ITPL",
+      "places": [
+        "Majestic (KBS)",
+        "Mayo Hall",
+        "Manipal Hospital",
+        "Marathahalli Bridge",
+        "Sathyasai Hospital"
+      ]
+    },
+    {
+      "routeName": "365P",
+      "origin": "Majestic (KBS)",
+      "destination": "Anekal",
+      "places": [
+        "Wilson Garden Police Station",
+        "Hulimavu Gate",
+        "Bannerghatta",
+        "Jigani"
+      ]
+    },
+    {
+      "routeName": "375A",
+      "origin": "Kengeri Housing Board QRTS",
+      "destination": "Electronic City (Infosys)",
+      "places": [
+        "Uttarahalli",
+        "Banashankari",
+        "Jayanagar 9th Block East",
+        "BTM Layout",
+        "Central Silk Board",
+        "Bommanahalli"
+      ]
+    },
+    {
+      "routeName": "402T",
+      "origin": "Yelahanka Sat Town PH V",
+      "destination": "ITPL",
+      "places": [
+        "Hebbal",
+        "Mekhri Circle",
+        "Majestic (KBS)",
+        "Bangalore Club",
+        "HAL Main Gate",
+        "Marathahalli"
+      ]
+    },
+    {
+      "routeName": "500DA",
+      "origin": "Yelahanka",
+      "destination": "Electronic City",
+      "places": [
+        "Hebbala Ring Road",
+        "Marathahalli Bridge",
+        "Agara",
+        "Central silk Board",
+        "Bommanahalli"
+      ]
+    },
+    {
+      "routeName": "500KB",
+      "origin": "Chowdeshwari Bus Station",
+      "destination": "ITPL",
+      "places": [
+        "Yeshwanthpura Bus Station",
+        "ISKON",
+        "Vijayanagara",
+        "PES College",
+        "Hosakerehalli Cross",
+        "BTM Layout",
+        "Agara",
+        "Kundalahalli",
+        "Sri Sri Sathya Sai Hospital"
+      ]
+    },
+    {
+      "routeName": "500KC",
+      "origin": "Nagarabhavi (BDA Complex)",
+      "destination": "ITPL",
+      "places": [
+        "DR.AIT",
+        "Nagarabavi Circle",
+        "Chandra layout",
+        "Banashankari",
+        "Agara",
+        "marathahalli bridge"
+      ]
+    },
+    {
+      "routeName": "600KC",
+      "origin": "Nagarabhavi (BDA Complex)",
+      "destination": "Electronic City",
+      "places": [
+        "DR.AIT",
+        "Nagarabavi Circle",
+        "Chandra Layout",
+        "Banashankari",
+        "Bommanahalli"
+      ]
+    },
+    {
+      "routeName": "BIG10-2",
+      "origin": "Electronic City Wipro Gate",
+      "destination": "Brigade Road",
+      "places": ["Adugodi", "Krupanidhi college", "Madiwala", "Bommanahalli"]
+    }
+  ]
+}
