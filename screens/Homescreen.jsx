@@ -1,14 +1,54 @@
 import React from 'react';
-import {Text,View , SafeAreaView} from 'react-native';
+import {FlatList,Text,View,SafeAreaView,Image,TouchableOpacity} from 'react-native';
+import { Icon } from 'react-native-elements';
 import tw from 'tailwind-react-native-classnames';
+
+
+
+const data=[
+    {
+        id:"1",
+        title:"Home",
+        image:"../as.png",
+        screen:"Camera",
+    },
+    {
+        id:"2",
+        title:"Settings",
+        image:"../as.png",
+        screen:"Settings",
+    },
+]
+
 
 const Homescreen = () => {
     return (
-        <SafeAreaView style={tw`bg-black h-full`}>
-               <View style={tw`bg-blue-100`}>
-                    <Text >Hello</Text>
-                </View>
+        <View style={tw`bg-white h-full`}>
+        <SafeAreaView style={tw`mt-20`}>
+            <Text style={tw`text-black font-bold text-2xl`}>Spry</Text>
+            <FlatList
+            data={data}
+            horizontal
+            keyExtractor={(item) => item.id}
+            style={tw`ml-5`}
+            renderItem={({item}) => (
+                <TouchableOpacity
+                onPress={() => navigation.navigate(item.screen)}
+                style={tw`p-2 pl-6 pb-8 pt-4 bg-gray-700 m-2 w-40 rounded-lg`}>
+                    <View>
+                        <Image 
+                        source={{uri: item.image}} 
+                        style={{width: 120, height:120, resizeMode:"contain"}}/>
+                        <Text style={tw`mt-2 text-lg font-semibold text-white`}>{item.title}</Text>
+                        <Icon 
+                        style={tw`p-2 bg-black rounded-full w-10 mt-4 `}
+                        name='arrowright' color="white" type='antdesign' />
+                    </View>
+                </TouchableOpacity>
+                )}
+            />
         </SafeAreaView>
+        </View>
     )
 }
 
