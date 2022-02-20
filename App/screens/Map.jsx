@@ -22,7 +22,7 @@ import BottomSheet from "@gorhom/bottom-sheet";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: "#000",
         alignItems: "center",
         justifyContent: "center",
     },
@@ -35,8 +35,10 @@ const styles = StyleSheet.create({
         backgroundColor: "grey",
     },
     contentContainer: {
-        flex: 1,
-        alignItems: "center",
+      flex: 1,
+      alignItems: 'center',
+      backgroundColor: 'white',
+      color: 'black',
     },
 });
 
