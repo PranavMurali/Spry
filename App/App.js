@@ -6,9 +6,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 import { useKeepAwake } from "expo-keep-awake";
-import Homescreen from "./screens/Homescreen";
 import MapScreen from "./screens/Map";
 import tw from "tailwind-react-native-classnames";
+import Menu from "./screens/Menu";
 
 export default function App() {
     useKeepAwake();
@@ -22,16 +22,15 @@ export default function App() {
                 >
                     <Stack.Navigator>
                         <Stack.Screen
-                            name="Home"
-                            component={Homescreen}
+                            name="Map"
+                            component={MapScreen}
                             options={{
                                 headerShown: false,
                             }}
                         />
-
                         <Stack.Screen
-                            name="Map"
-                            component={MapScreen}
+                            name="Menu"
+                            component={Menu}
                             options={{
                                 headerShown: false,
                             }}
