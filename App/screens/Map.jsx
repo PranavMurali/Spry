@@ -1,5 +1,11 @@
-import React from "react";
-import { StyleSheet, Text, View, Dimensions,TouchableOpacity} from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+    StyleSheet,
+    Text,
+    View,
+    Dimensions,
+    TouchableOpacity,
+} from "react-native";
 import MapView, {
     MAP_TYPES,
     PROVIDER_DEFAULT,
@@ -7,7 +13,8 @@ import MapView, {
 } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
-import { useNavigation} from '@react-navigation/core';
+import * as Location from "expo-location";
+import { useNavigation } from "@react-navigation/core";
 
 const styles = StyleSheet.create({
     container: {
@@ -24,30 +31,68 @@ const styles = StyleSheet.create({
 
 const MapScreen = () => {
     const navigation = useNavigation();
+    const [location, setLocation] = useState({
+        coords: {
+            latitude: 13.0827,
+            longitude: 80.2707,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+        },
+    });
+    const [errorMsg, setErrorMsg] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== "granted") {
+                setErrorMsg("Permission to access location was denied");
+                return;
+            }
+
+            let location = await Location.getCurrentPositionAsync({});
+            setLocation(location);
+            console.log(location["coords"]["latitude"]);
+            console.log(location["coords"]["longitude"]);
+        })();
+    }, []);
+
     return (
         <>
-        <View>
-            <TouchableOpacity
-            onPress={() => navigation.navigate('Home')}
-            style={tw`bg-gray-100 absolute top-16 left-8 z-50 p-3 rounded-full shadow-lg`}>
-                <Icon name="menu" type="material-community" color="#000" size={30} />
-            </TouchableOpacity>
-        </View>
-        <View style={styles.container}>
-            <MapView
-                style={styles.map}
-                mapType={MAP_TYPES.STANDARD}
-                rotateEnabled={false}
-                style={{ flex: 1 }}
-                style={styles.map}
-                showsUserLocation={true}
-            >
-            <UrlTile
-                urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
-                maximumZ={19}
-            />
-            </MapView>
-        </View>
+            <View>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate("Home")}
+                    style={tw`bg-gray-100 absolute top-16 left-8 z-50 p-3 rounded-full shadow-lg`}
+                >
+                    <Icon
+                        name="menu"
+                        type="material-community"
+                        color="#000"
+                        size={30}
+                    />
+                </TouchableOpacity>
+            </View>
+            <View style={styles.container}>
+                {console.log(location["coords"]["latitude"])}
+                <MapView
+                    region={{
+                        latitude: location["coords"]["latitude"],
+                        longitude: location["coords"]["longitude"],
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                    style={styles.map}
+                    mapType={MAP_TYPES.STANDARD}
+                    rotateEnabled={false}
+                    style={{ flex: 1 }}
+                    style={styles.map}
+                    showsUserLocation={true}
+                >
+                    <UrlTile
+                        urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
+                        maximumZ={19}
+                    />
+                </MapView>
+            </View>
         </>
     );
 };
