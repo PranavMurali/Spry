@@ -5,14 +5,24 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
-type PlacesList struct {
-	Places []string
+// defines a standard geographical area
+type Place struct {
+	Name string
+	Lat  float64
+	Lng  float64
 }
 
+// defines the places.json input format (for reading only)
+type PlacesList struct {
+	Places []Place
+}
+
+// defines a standard bangalore bus route
 type Route struct {
 	RouteName   string
 	Origin      string
@@ -20,10 +30,12 @@ type Route struct {
 	Places      []string
 }
 
+// defines the routes.json input format (for reading only)
 type RouteList struct {
 	Routes []Route
 }
 
+// reads places.json and returns a PlacesList object
 func readPlaces() PlacesList {
 	content, err := ioutil.ReadFile("./places.json")
 	if err != nil {
@@ -37,6 +49,7 @@ func readPlaces() PlacesList {
 	return placesJson
 }
 
+// reads routes.json and returns a RouteList object
 func readRoutes() RouteList {
 	content, err := ioutil.ReadFile("./routes.json")
 	if err != nil {
@@ -85,11 +98,28 @@ func getShortestRoute(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, shortestRoute)
 }
 
+func getClosestArea(c *gin.Context) {
+	inpLat, _ := strconv.ParseFloat(c.Query("lat"), 64)
+	inpLng, _ := strconv.ParseFloat(c.Query("lng"), 64)
+	places := readPlaces()
+	minDist := 100.00
+	var closestPlace Place
+	for _, place := range places.Places {
+		dist := EucDist(inpLat, inpLng, place.Lat, place.Lng)
+		if dist < float64(minDist) {
+			minDist = dist
+			closestPlace = place
+		}
+	}
+	c.IndentedJSON(http.StatusOK, closestPlace)
+}
+
 func main() {
 	router := gin.Default()
 	router.GET("/places", getPlaces)
 	router.GET("/routes", getRoutes)
 	router.POST("/shortestroute", getShortestRoute)
+	router.POST("/closestarea", getClosestArea)
 
 	router.Run("localhost:8080")
 }

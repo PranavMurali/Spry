@@ -1,3 +1,4 @@
+import random
 from bs4 import BeautifulSoup as Soup
 import requests
 import json
@@ -16,6 +17,16 @@ class Route():
         self.places.append(origin)
         self.places += places.split(', ')
         self.places.append(destination)
+
+class Place():
+    name = None
+    lat = None
+    lng = None
+    
+    def __init__(self, name, lat, lng):
+        self.name = name
+        self.lat = lat
+        self.lng = lng
 
 
 my_url = 'https://opencity.in/explainer/bmtc-bus-routes'
@@ -40,7 +51,12 @@ f = open("routes.json", "w")
 f.write(json_string)
 f.close()
 
-json_string = json.dumps({"places": list(places)})
+placesList = []
+
+for place in places:
+    placesList.append(Place(place, random.uniform(77.0, 78.0), random.uniform(12.0, 12.5)))
+
+json_string = json.dumps({"places": [ob.__dict__ for ob in placesList]})
 f = open("places.json", "w")
 f.write(json_string)
 f.close()
