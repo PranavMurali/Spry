@@ -4,8 +4,10 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -33,6 +35,40 @@ type Route struct {
 // defines the routes.json input format (for reading only)
 type RouteList struct {
 	Routes []Route
+}
+
+type Bus struct {
+	RouteName            string
+	FullCapacity         int32
+	CurrentCapacity      int32
+	MaintenanceRemaining int32
+	BusStop              string
+	Lat                  float64
+	Lng                  float64
+	StartTime            time.Time
+}
+
+func (b *Bus) Set() {
+	randRoutes := []string{"195", "276", "365"}
+	places := readPlaces().Places
+	routes := readRoutes().Routes
+	b.RouteName = randRoutes[rand.Intn(2)]
+	b.FullCapacity = 50
+	b.CurrentCapacity = int32(rand.Intn(50))
+	for _, route := range routes {
+		if b.RouteName == route.RouteName {
+			b.BusStop = route.Places[rand.Intn(len(route.Places)-1)]
+			for _, place := range places {
+				if b.BusStop == place.Name {
+					b.Lat = place.Lat
+					b.Lng = place.Lng
+					break
+				}
+			}
+			break
+		}
+	}
+	b.StartTime = Randate()
 }
 
 // reads places.json and returns a PlacesList object
@@ -114,12 +150,19 @@ func getClosestArea(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, closestPlace)
 }
 
+func getBusLocation(c *gin.Context) {
+	var bus Bus
+	bus.Set()
+	c.JSON(http.StatusOK, bus)
+}
+
 func main() {
 	router := gin.Default()
 	router.GET("/places", getPlaces)
 	router.GET("/routes", getRoutes)
 	router.POST("/shortestroute", getShortestRoute)
 	router.POST("/closestarea", getClosestArea)
+	router.GET("/getbuslocation", getBusLocation)
 
 	router.Run("localhost:8080")
 }
