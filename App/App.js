@@ -9,6 +9,7 @@ import { useKeepAwake } from "expo-keep-awake";
 import MapScreen from "./screens/Map";
 import tw from "tailwind-react-native-classnames";
 import Menu from "./screens/Menu";
+import Timeline from "./screens/Timeline";
 
 export default function App() {
     useKeepAwake();
@@ -31,6 +32,13 @@ export default function App() {
                         <Stack.Screen
                             name="Menu"
                             component={Menu}
+                            options={{
+                                headerShown: false,
+                            }}
+                        />
+                        <Stack.Screen
+                            name="Timeline"
+                            component={Timeline}
                             options={{
                                 headerShown: false,
                             }}
