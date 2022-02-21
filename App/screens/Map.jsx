@@ -35,33 +35,35 @@ const styles = StyleSheet.create({
         backgroundColor: "grey",
     },
     contentContainer: {
-      flex: 1,
-      alignItems: 'center',
-      backgroundColor: 'white',
-      color: 'black',
+        flex: 1,
+        alignItems: "center",
+        backgroundColor: "white",
+        color: "black",
     },
 });
 
 const MapScreen = () => {
     const navigation = useNavigation();
     const bottomSheetRef = useRef < BottomSheet > null;
-    const markers = [
+    const forceUpdate = React.useReducer((bool) => !bool)[1];
+    const markersInit = [
         {
             title: "Mayo Hall Manipal Hospital",
-            latitude: 77.38053544805545,
-            longitude: 12.457774224055761,
+            latitude: 12.457774224055761,
+            longitude: 77.38053544805545,
         },
         {
             title: "Domlur.",
-            latitude: 77.05061196436114,
-            longitude: 12.103930552235786,
+            latitude: 12.103930552235786,
+            longitude: 77.05061196436114,
         },
         {
             title: "K.R.Puram Rly.Stn,Marathhalli Bridge",
-            latitude: 77.56726554880552,
-            longitude: 12.035640565856784,
+            latitude: 12.035640565856784,
+            longitude: 77.56726554880552,
         },
     ];
+    const [markers, setMarkers] = useState([]);
     const [location, setLocation] = useState({
         coords: {
             latitude: 13.0827,
@@ -82,6 +84,7 @@ const MapScreen = () => {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
+            setMarkers(markersInit);
             console.log(location["coords"]["latitude"]);
             console.log(location["coords"]["longitude"]);
         })();
@@ -119,22 +122,30 @@ const MapScreen = () => {
                     style={styles.map}
                     showsUserLocation={true}
                     provider="google"
-                    annotations={markers}
+                    annotations={markersInit}
                 >
-                    <UrlTile
+                    {/* <UrlTile
                         urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
                         maximumZ={19}
-                    />
-                    {markers.map((marker, index) => (
-                        <MapView.Marker
-                            key={index}
-                            title={marker.title}
-                            coordinate={{
-                                latitude: marker.latitude,
-                                longitude: marker.longitude,
-                            }}
-                        />
-                    ))}
+
+                    /> */}
+                    {markers.map(
+                        (marker, index) => (
+                            console.log("marker lat - " + marker["latitude"]),
+                            console.log("marker long - " + marker["longitude"]),
+                            (
+                                <Marker
+                                    key={index + "_" + Date.now()}
+                                    title={marker.title}
+                                    coordinate={{
+                                        latitude: marker.latitude,
+                                        longitude: marker.longitude,
+                                    }}
+                                />
+                            )
+                        )
+                    )}
+                    {/* {forceUpdate()} */}
                 </MapView>
             </View>
             <BottomSheet index={1} snapPoints={snapPoints}>
