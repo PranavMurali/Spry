@@ -10,6 +10,7 @@ import MapScreen from "./screens/Map";
 import tw from "tailwind-react-native-classnames";
 import Menu from "./screens/Menu";
 import Timeline from "./screens/Timeline";
+import Admin from "./screens/Admin";
 
 export default function App() {
     useKeepAwake();
@@ -39,6 +40,13 @@ export default function App() {
                         <Stack.Screen
                             name="Timeline"
                             component={Timeline}
+                            options={{
+                                headerShown: false,
+                            }}
+                        />
+                         <Stack.Screen
+                            name="Admin"
+                            component={Admin}
                             options={{
                                 headerShown: false,
                             }}
