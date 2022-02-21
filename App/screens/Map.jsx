@@ -97,7 +97,7 @@ const MapScreen = () => {
             <View>
                 <TouchableOpacity
                     onPress={() => navigation.navigate("Menu")}
-                    style={tw`bg-gray-100 absolute top-16 left-8 z-50 p-3 rounded-full shadow-lg`}
+                    style={tw`bg-gray-100 absolute top-8 left-3 z-50 p-3 rounded-full shadow-lg`}
                 >
                     <Icon
                         name="menu"
@@ -127,6 +127,7 @@ const MapScreen = () => {
                     {/* <UrlTile
                         urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
                         maximumZ={19}
+
                     /> */}
                     {markers.map(
                         (marker, index) => (

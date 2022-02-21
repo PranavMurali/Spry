@@ -114,12 +114,19 @@ func getClosestArea(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, closestPlace)
 }
 
+func getBusLocation(c *gin.Context) {
+	var bus Bus
+	bus.Set()
+	c.JSON(http.StatusOK, bus)
+}
+
 func main() {
 	router := gin.Default()
 	router.GET("/places", getPlaces)
 	router.GET("/routes", getRoutes)
 	router.POST("/shortestroute", getShortestRoute)
 	router.POST("/closestarea", getClosestArea)
+	router.GET("/getbuslocation", getBusLocation)
 
 	router.Run("localhost:8080")
 }
