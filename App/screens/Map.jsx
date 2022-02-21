@@ -12,7 +12,7 @@ import {
     Dimensions,
     TouchableOpacity,
 } from "react-native";
-import MapView, { MAP_TYPES, UrlTile } from "react-native-maps";
+import MapView, { MAP_TYPES, UrlTile, Marker } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 import * as Location from "expo-location";
@@ -45,25 +45,25 @@ const styles = StyleSheet.create({
 const MapScreen = () => {
     const navigation = useNavigation();
     const bottomSheetRef = useRef < BottomSheet > null;
+    const forceUpdate = React.useReducer((bool) => !bool)[1];
     const markersInit = [
         {
             title: "Mayo Hall Manipal Hospital",
-            latitude: 77.38053544805545,
-            longitude: 12.457774224055761,
+            latitude: 12.457774224055761,
+            longitude: 77.38053544805545,
         },
         {
             title: "Domlur.",
-            latitude: 77.05061196436114,
-            longitude: 12.103930552235786,
+            latitude: 12.103930552235786,
+            longitude: 77.05061196436114,
         },
         {
             title: "K.R.Puram Rly.Stn,Marathhalli Bridge",
-            latitude: 77.56726554880552,
-            longitude: 12.035640565856784,
+            latitude: 12.035640565856784,
+            longitude: 77.56726554880552,
         },
     ];
-    const [markers, setMarkers] = useState(markersInit);
-    // setMarkers(markersInit);
+    const [markers, setMarkers] = useState([]);
     const [location, setLocation] = useState({
         coords: {
             latitude: 13.0827,
@@ -84,6 +84,7 @@ const MapScreen = () => {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
+            setMarkers(markersInit);
             console.log(location["coords"]["latitude"]);
             console.log(location["coords"]["longitude"]);
         })();
@@ -121,7 +122,7 @@ const MapScreen = () => {
                     style={styles.map}
                     showsUserLocation={true}
                     provider="google"
-                    // annotations={markers}
+                    annotations={markersInit}
                 >
                     {/* <UrlTile
                         urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
@@ -130,8 +131,9 @@ const MapScreen = () => {
                     {markers.map(
                         (marker, index) => (
                             console.log("marker lat - " + marker["latitude"]),
+                            console.log("marker long - " + marker["longitude"]),
                             (
-                                <MapView.Marker
+                                <Marker
                                     key={index + "_" + Date.now()}
                                     title={marker.title}
                                     coordinate={{
@@ -142,8 +144,8 @@ const MapScreen = () => {
                             )
                         )
                     )}
+                    {/* {forceUpdate()} */}
                 </MapView>
-                {/* {animate} */}
             </View>
             <BottomSheet index={1} snapPoints={snapPoints}>
                 <View style={styles.contentContainer}>
