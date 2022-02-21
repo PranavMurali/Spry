@@ -12,7 +12,7 @@ const Menu = () => {
       <>
     <View>
         <TouchableOpacity
-        onPress={() => navigation.navigate('Menu')}
+        onPress={() => navigation.navigate('Map')}
         style={tw`bg-gray-100 absolute top-8 left-3 z-50 p-3 rounded-full shadow-lg`}>
             <Icon name='arrowleft' color="black" type='antdesign' />
         </TouchableOpacity>
@@ -27,11 +27,13 @@ const Menu = () => {
         <SpeedDial.Action
           icon={{name: 'developer-board', color: '#fff', type:'material'}}
           title="Fleet Console"
+          onPress={() => navigation.navigate('Fleet')}
         />
 
         <SpeedDial.Action
           icon={{ name: 'directions-bus', color: '#fff', type:'material' }}
           title="Bus Console"
+          onPress={() => navigation.navigate('Bus')}
         />
 
         <SpeedDial.Action

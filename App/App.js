@@ -11,6 +11,8 @@ import tw from "tailwind-react-native-classnames";
 import Menu from "./screens/Menu";
 import Timeline from "./screens/Timeline";
 import Admin from "./screens/Admin";
+import Fleet from "./screens/Fleet";
+import Bus from "./screens/Bus";
 
 export default function App() {
     useKeepAwake();
@@ -47,6 +49,20 @@ export default function App() {
                          <Stack.Screen
                             name="Admin"
                             component={Admin}
+                            options={{
+                                headerShown: false,
+                            }}
+                        />
+                        <Stack.Screen
+                            name="Fleet"
+                            component={Fleet}
+                            options={{
+                                headerShown: false,
+                            }}
+                        />
+                        <Stack.Screen
+                            name="Bus"
+                            component={Bus}
                             options={{
                                 headerShown: false,
                             }}
