@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 const MapScreen = () => {
     const navigation = useNavigation();
     const bottomSheetRef = useRef < BottomSheet > null;
-    const markers = [
+    const markersInit = [
         {
             title: "Mayo Hall Manipal Hospital",
             latitude: 77.38053544805545,
@@ -62,6 +62,8 @@ const MapScreen = () => {
             longitude: 12.035640565856784,
         },
     ];
+    const [markers, setMarkers] = useState(markersInit);
+    // setMarkers(markersInit);
     const [location, setLocation] = useState({
         coords: {
             latitude: 13.0827,
@@ -118,25 +120,30 @@ const MapScreen = () => {
                     style={{ flex: 1 }}
                     style={styles.map}
                     showsUserLocation={true}
-                    zo
                     provider="google"
                     // annotations={markers}
                 >
-                    <UrlTile
+                    {/* <UrlTile
                         urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
                         maximumZ={19}
-                    />
-                    {markers.map((marker, index) => (
-                        <MapView.Marker
-                            key={index + "_" + Date.now()}
-                            title={marker.title}
-                            coordinate={{
-                                latitude: 13.0827,
-                                longitude: 80.2707,
-                            }}
-                        />
-                    ))}
+                    /> */}
+                    {markers.map(
+                        (marker, index) => (
+                            console.log("marker lat - " + marker["latitude"]),
+                            (
+                                <MapView.Marker
+                                    key={index + "_" + Date.now()}
+                                    title={marker.title}
+                                    coordinate={{
+                                        latitude: marker.latitude,
+                                        longitude: marker.longitude,
+                                    }}
+                                />
+                            )
+                        )
+                    )}
                 </MapView>
+                {/* {animate} */}
             </View>
             <BottomSheet index={1} snapPoints={snapPoints}>
                 <View style={styles.contentContainer}>
