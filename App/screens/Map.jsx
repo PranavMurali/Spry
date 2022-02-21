@@ -12,7 +12,7 @@ import {
     Dimensions,
     TouchableOpacity,
 } from "react-native";
-import MapView, { MAP_TYPES, UrlTile, Marker } from "react-native-maps";
+import MapView, { MAP_TYPES, UrlTile } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 import * as Location from "expo-location";
@@ -35,10 +35,10 @@ const styles = StyleSheet.create({
         backgroundColor: "grey",
     },
     contentContainer: {
-      flex: 1,
-      alignItems: 'center',
-      backgroundColor: 'white',
-      color: 'black',
+        flex: 1,
+        alignItems: "center",
+        backgroundColor: "white",
+        color: "black",
     },
 });
 
@@ -118,8 +118,9 @@ const MapScreen = () => {
                     style={{ flex: 1 }}
                     style={styles.map}
                     showsUserLocation={true}
+                    zo
                     provider="google"
-                    annotations={markers}
+                    // annotations={markers}
                 >
                     <UrlTile
                         urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
@@ -127,11 +128,11 @@ const MapScreen = () => {
                     />
                     {markers.map((marker, index) => (
                         <MapView.Marker
-                            key={index}
+                            key={index + "_" + Date.now()}
                             title={marker.title}
                             coordinate={{
-                                latitude: Number(marker.latitude),
-                                longitude: Number(marker.longitude),
+                                latitude: 13.0827,
+                                longitude: 80.2707,
                             }}
                         />
                     ))}
