@@ -12,7 +12,7 @@ import {
     Dimensions,
     TouchableOpacity,
 } from "react-native";
-import MapView, { MAP_TYPES, UrlTile } from "react-native-maps";
+import MapView, { MAP_TYPES, UrlTile, Marker } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 import * as Location from "expo-location";
@@ -43,6 +43,23 @@ const styles = StyleSheet.create({
 const MapScreen = () => {
     const navigation = useNavigation();
     const bottomSheetRef = useRef < BottomSheet > null;
+    const markers = [
+        {
+            title: "Mayo Hall Manipal Hospital",
+            latitude: 77.38053544805545,
+            longitude: 12.457774224055761,
+        },
+        {
+            title: "Domlur.",
+            latitude: 77.05061196436114,
+            longitude: 12.103930552235786,
+        },
+        {
+            title: "K.R.Puram Rly.Stn,Marathhalli Bridge",
+            latitude: 77.56726554880552,
+            longitude: 12.035640565856784,
+        },
+    ];
     const [location, setLocation] = useState({
         coords: {
             latitude: 13.0827,
@@ -99,11 +116,23 @@ const MapScreen = () => {
                     style={{ flex: 1 }}
                     style={styles.map}
                     showsUserLocation={true}
+                    provider="google"
+                    annotations={markers}
                 >
                     <UrlTile
                         urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
                         maximumZ={19}
                     />
+                    {markers.map((marker, index) => (
+                        <MapView.Marker
+                            key={index}
+                            title={marker.title}
+                            coordinate={{
+                                latitude: Number(marker.latitude),
+                                longitude: Number(marker.longitude),
+                            }}
+                        />
+                    ))}
                 </MapView>
             </View>
             <BottomSheet index={1} snapPoints={snapPoints}>
