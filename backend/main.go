@@ -35,6 +35,32 @@ type RouteList struct {
 	Routes []Route
 }
 
+type Distance struct {
+	Destination_addresses []string
+	Origin_addresses      []string
+	Rows                  []Row
+}
+
+type Row struct {
+	Elements []Element `json:"elements"`
+}
+
+type Element struct {
+	Distance Distance_struct `json:"distance"`
+	Duration Duration_struct `json:"duration"`
+	Status   string          `json:"status"`
+}
+
+type Distance_struct struct {
+	Text  string `json:"text"`
+	Value int    `json:"value"`
+}
+
+type Duration_struct struct {
+	Text  string `json:"text"`
+	Value int    `json:"value"`
+}
+
 // reads places.json and returns a PlacesList object
 func readPlaces() PlacesList {
 	content, err := ioutil.ReadFile("./places.json")
@@ -121,7 +147,10 @@ func getBusLocation(c *gin.Context) {
 }
 
 func ReadDistance(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, GetDistance())
+	var distance = GetDistance("Bengaluru", "Mysore")
+	var dist Distance
+	json.Unmarshal(distance, &dist)
+	c.IndentedJSON(http.StatusOK, dist.Rows[0].Elements[0].Distance.Text)
 }
 
 func main() {

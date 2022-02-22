@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"math"
@@ -23,9 +22,38 @@ func Randate() time.Time {
 	return time.Unix(sec, 0)
 }
 
-func GetDistance() map[string]interface{} {
+// func GetDistance(origin string, destination string) map[string]interface{} {
+// 	var url Url
+// 	url.Set("bus", origin, destination)
+// 	method := "GET"
+
+// 	client := &http.Client{}
+// 	req, err := http.NewRequest(method, url.URL, nil)
+
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
+// 	res, err := client.Do(req)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
+// 	defer res.Body.Close()
+
+// 	body, err := ioutil.ReadAll(res.Body)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
+// 	fmt.Println("Util.go")
+// 	fmt.Println(string(body))
+// 	var raw map[string]interface{}
+// 	json.Unmarshal(body, &raw)
+
+// 	return raw
+// }
+
+func GetDistance(origin string, destination string) []byte {
 	var url Url
-	url.Set("bus", "Bengaluru", "Mysore")
+	url.Set("bus", origin, destination)
 	method := "GET"
 
 	client := &http.Client{}
@@ -44,9 +72,6 @@ func GetDistance() map[string]interface{} {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(string(body))
-	var raw map[string]interface{}
-	json.Unmarshal(body, &raw)
 
-	return raw
+	return body
 }

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -22,5 +21,4 @@ func (u *Url) Set(transit_mode string, origin string, destination string) {
 	u.Origin = "origins=" + origin
 	u.Destination = "&destinations=" + destination
 	u.URL = u.Prefix + u.Origin + u.Destination + u.Transit_mode + "&key=" + os.Getenv("API_KEY")
-	fmt.Println(u.URL)
 }
