@@ -1,9 +1,4 @@
-import React, {
-    useState,
-    useEffect,
-    useMemo,
-    useRef,
-} from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import {
     StyleSheet,
     Text,
@@ -11,7 +6,6 @@ import {
     View,
     Dimensions,
     TouchableOpacity,
-    
 } from "react-native";
 import MapView, { MAP_TYPES, Marker } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
@@ -20,7 +14,7 @@ import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/core";
 import BottomSheet from "@gorhom/bottom-sheet";
 
-import stops from '../stops.json';
+import stops from "../stops.json";
 import { ScrollView } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
@@ -52,12 +46,12 @@ const styles = StyleSheet.create({
         borderWidth: 0.2,
         borderRadius: 40,
         padding: 10,
-      },
+    },
 
-    stops:{
+    stops: {
         flex: 1,
         alignItems: "stretch",
-    }
+    },
 });
 
 const MapScreen = () => {
@@ -91,11 +85,13 @@ const MapScreen = () => {
         },
     });
     const [errorMsg, setErrorMsg] = useState(null);
-    const [destination, onChangeDestination] = useState('');
+    const [destination, onChangeDestination] = useState("");
 
-    let filteredData = stops.places.filter((item)=>{
-        return item.name.toLowerCase().indexOf(destination.toLowerCase()) !== -1
-    })
+    let filteredData = stops.places.filter((item) => {
+        return (
+            item.name.toLowerCase().indexOf(destination.toLowerCase()) !== -1
+        );
+    });
 
     useEffect(() => {
         (async () => {
@@ -164,6 +160,7 @@ const MapScreen = () => {
                                         latitude: marker.latitude,
                                         longitude: marker.longitude,
                                     }}
+                                    image={require("../assets/bus-stop.png")}
                                 />
                             )
                         )
@@ -173,21 +170,29 @@ const MapScreen = () => {
             </View>
             <BottomSheet index={1} snapPoints={snapPoints}>
                 <View style={styles.contentContainer}>
-                    <TextInput style={styles.input} onChangeText={onChangeDestination} value={destination} placeholder="Search Destination"/>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={onChangeDestination}
+                        value={destination}
+                        placeholder="Search Destination"
+                    />
                     <ScrollView>
-                    {
-                        filteredData.map((stop, index) => (
+                        {filteredData.map((stop, index) => (
                             <View key={index} style={tw`flex-row mt-3`}>
                                 <View style={tw`w-80`}>
-                                <Text style={tw`font-black mt-2 mx-3`}>{stop.name}</Text>
+                                    <Text style={tw`font-black mt-2 mx-3`}>
+                                        {stop.name}
+                                    </Text>
                                 </View>
-                                <Icon style={tw`ml-4`} name='location' color="black" type='octicon' />
+                                <Icon
+                                    style={tw`ml-4`}
+                                    name="location"
+                                    color="black"
+                                    type="octicon"
+                                />
                             </View>
-                            )
-                        )                        
-                    }
+                        ))}
                     </ScrollView>
-                    
                 </View>
             </BottomSheet>
         </>
