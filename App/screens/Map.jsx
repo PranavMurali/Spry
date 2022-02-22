@@ -179,7 +179,9 @@ const MapScreen = () => {
             </View>
             <BottomSheet index={1} snapPoints={snapPoints}>
                 <View style={styles.contentContainer}>
-                    <TextInput style={styles.input} onChangeText={onChangeDestination} value={destination} placeholder="Search Destination"/>
+                    <TextInput style={styles.input} onChangeText={onChangeDestination} value={destination} placeholder="Search Destination"
+                    returnKeyType='search' onSubmitEditing={() => setDestination(filteredData[0].name)}/>
+                    <Text>{destination}</Text>
                     <ScrollView>
                     {
                         filteredData.map((stop, index) => (
