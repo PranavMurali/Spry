@@ -2,41 +2,11 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
-	"log"
 	"net/http"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
-
-// reads places.json and returns a PlacesList object
-func readPlaces() PlacesList {
-	content, err := ioutil.ReadFile("./places.json")
-	if err != nil {
-		log.Fatal("Error when opening file: ", err)
-	}
-	var placesJson PlacesList
-	err = json.Unmarshal(content, &placesJson)
-	if err != nil {
-		log.Fatal("Error during Unmarshal(): ", err)
-	}
-	return placesJson
-}
-
-// reads routes.json and returns a RouteList object
-func readRoutes() RouteList {
-	content, err := ioutil.ReadFile("./routes.json")
-	if err != nil {
-		log.Fatal("Error when opening file: ", err)
-	}
-	var routesJson RouteList
-	err = json.Unmarshal(content, &routesJson)
-	if err != nil {
-		log.Fatal("Error during Unmarshal(): ", err)
-	}
-	return routesJson
-}
 
 // returns places as json (endpoint)
 func getPlaces(c *gin.Context) {
