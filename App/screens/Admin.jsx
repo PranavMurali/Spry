@@ -15,6 +15,7 @@ const Admin = () => {
               <Icon name='arrowleft' color="black" type='antdesign' />
           </TouchableHighlight>
       </View>
+      
     </>
   )
 }
