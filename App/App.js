@@ -20,9 +20,6 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore'
 export default function App() {
     useKeepAwake();
 
-    
-    
-
     //Firebase configuration
     const firebaseConfig = {
     apiKey: "AIzaSyDfCO4PmzD7WnD-vGh_YIaZS9lv2kwlnNY",
