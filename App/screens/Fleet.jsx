@@ -49,10 +49,14 @@ const Fleet = () => {
             {buses.map((u, i) => {
               return (
                 <View key={i} style={tw`flex-row mt-3`}>
-                    <Icon name='bus' color="black" type='font-awesome' />
-                    <Text style={tw`font-black mt-2 mx-3`}>{u.regNo}</Text>
-                    <Text style={tw`font-black mt-2`}>({u.routeNo})</Text>
-                  <Icon style={tw`ml-40`} name='location' color="black" type='octicon' />
+                  <View style={tw`flex-row content-end pr-20`}>
+                      <Icon name='bus' color="black" type='font-awesome' />
+                      <Text style={tw`font-black mt-2 mx-3`}>{u.regNo}</Text>
+                      <Text style={tw`mt-2 bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded`}>Purple</Text>
+                  </View>
+                  <View style={tw`flex-row content-end`}>
+                      <Icon style={tw`mt-2 ml-2`} name='location' color="black" type='octicon' />
+                  </View>
                 </View>
               );
             })}
