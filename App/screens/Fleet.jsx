@@ -3,11 +3,14 @@ import { StyleSheet, Text, View, Dimensions,TouchableOpacity,TextInput} from "re
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 import { useNavigation} from '@react-navigation/core';
-import {Card, Button} from 'react-native-elements';
+import { SpeedDial } from 'react-native-elements';
+import {Card} from 'react-native-elements';
 import { createFilter } from 'react-native-search-filter';
+import DropDownPicker from 'react-native-dropdown-picker';
 
 const Fleet = () => {
     const navigation = useNavigation();
+    const [open, setOpen] = React.useState(false);
     const buses= [
         {
             regNo: 'TN10AS1234',
@@ -82,7 +85,7 @@ const Fleet = () => {
             <Icon name='arrowleft' color="black" type='antdesign' />
         </TouchableOpacity>
     </View>
-    <View style={tw`mt-20`}>
+    <View style={tw`mt-20 flex flex-col`}>
     <TextInput style={styles.input} onChangeText={(term) => { setSearchTerm(term) }} placeholder="Search Buses"/>
     <Card>
             {data.map((u, i) => {
@@ -100,8 +103,34 @@ const Fleet = () => {
                 </View>
               );
             })}
-          </Card>
+    </Card>
     </View>
+    <SpeedDial
+        isOpen={open}
+        icon={{name: 'devices-other', color: '#fff', type:'material'}}
+        openIcon={{ name: 'close', color: '#fff' }}
+        onOpen={() => setOpen(!open)}
+        onClose={() => setOpen(!open)}
+      >
+        <SpeedDial.Action
+          icon={{name: 'developer-board', color: '#fff', type:'material'}}
+          title="Fleet Console"
+          onPress={() => navigation.navigate('Fleet')}
+        />
+
+        <SpeedDial.Action
+        icon={{ name: 'engineering', color: '#fff', type:'material' }}
+        title="Admin Console"
+        onPress={() => navigation.navigate('Admin')}
+        />
+
+        <SpeedDial.Action
+        icon={{ name:'calendar',color:"#fff" ,type:'antdesign' }}
+        title="Timeline"
+        onPress={() => navigation.navigate('Timeline')}
+        />
+
+      </SpeedDial>
     </>
   )
 }
