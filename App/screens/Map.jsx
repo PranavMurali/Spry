@@ -8,9 +8,11 @@ import React, {
 import {
     StyleSheet,
     Text,
+    TextInput,
     View,
     Dimensions,
     TouchableOpacity,
+    
 } from "react-native";
 import MapView, { MAP_TYPES, UrlTile, Marker } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
@@ -18,6 +20,9 @@ import { Icon } from "react-native-elements";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/core";
 import BottomSheet from "@gorhom/bottom-sheet";
+
+import stops from '../stops.json';
+import { ScrollView } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
     container: {
@@ -40,6 +45,20 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         color: "black",
     },
+
+    input: {
+        height: 40,
+        width: "90%",
+        margin: 12,
+        borderWidth: 1,
+        borderRadius: 20,
+        padding: 10,
+      },
+
+    stops:{
+        flex: 1,
+        alignItems: "stretch",
+    }
 });
 
 const MapScreen = () => {
@@ -73,6 +92,11 @@ const MapScreen = () => {
         },
     });
     const [errorMsg, setErrorMsg] = useState(null);
+    const [destination, onChangeDestination] = useState('');
+
+    let filteredData = stops.places.filter((item)=>{
+        return item.name.toLowerCase().indexOf(destination.toLowerCase()) !== -1
+    })
 
     useEffect(() => {
         (async () => {
@@ -151,6 +175,21 @@ const MapScreen = () => {
             <BottomSheet index={1} snapPoints={snapPoints}>
                 <View style={styles.contentContainer}>
                     <Text>Awesome 🎉</Text>
+                    <TextInput style={styles.input} onChangeText={onChangeDestination} value={destination} placeholder="Search Destination"/>
+                    <ScrollView>
+                    {
+                        filteredData.map((stop, index) => (
+                            <View key={index} style={tw`flex-row mt-3`}>
+                                <Text style={tw`font-black mt-2 mx-3`}>{stop.name}</Text>
+                                <Icon style={tw`ml-40`} name='location' color="black" type='octicon' />
+                            </View>
+                            )
+                        )
+
+                        
+                    }
+                    </ScrollView>
+                    
                 </View>
             </BottomSheet>
         </>
