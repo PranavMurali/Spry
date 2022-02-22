@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// defines a singular bus that is part of the BMTC
 type Bus struct {
 	RouteName            string
 	BusId                string
@@ -18,6 +19,7 @@ type Bus struct {
 	ToFinalStop          bool
 }
 
+// randomized constructor for simulation purposes
 func (b *Bus) Set() {
 	randRoutes := []string{"195", "276", "365"}
 	places := readPlaces().Places

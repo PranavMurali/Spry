@@ -38,14 +38,19 @@ func readRoutes() RouteList {
 	return routesJson
 }
 
+// returns places as json (endpoint)
 func getPlaces(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, readPlaces().Places)
 }
 
+// returns routes as json (endpoint)
 func getRoutes(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, readRoutes().Routes)
 }
 
+// iterates through all possible routes to find a route where the source is before destination and the distance between
+// them is shortest. Also checks the return route and denotes the route direction using a flag (ForwardFlag)
+// Returns the route and flag
 func getShortestRoute(c *gin.Context) {
 	source := c.Query("source")
 	dest := c.Query("dest")
@@ -53,10 +58,10 @@ func getShortestRoute(c *gin.Context) {
 	minDist := 100
 	var shortestRoute ShortestRoute
 	for _, route := range routes.Routes {
-		sIndexlr := -1
-		dIndexlr := -1
-		sIndexrl := -1
-		dIndexrl := -1
+		sIndexlr := -1 // index of source when array is traversed from left to right (forward route)
+		dIndexlr := -1 // index of destination when array is traversed from left to right (forward route)
+		sIndexrl := -1 // index of source when array is traversed from right to left (return route)
+		dIndexrl := -1 // index of destination when array is traversed from right to left (return route)
 		for i, place := range route.Places {
 			if place == source {
 				sIndexlr = i
@@ -91,6 +96,7 @@ func getShortestRoute(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, shortestRoute)
 }
 
+// gets the closest area(place) given coordinates (latitude, longitude)
 func getClosestArea(c *gin.Context) {
 	inpLat, _ := strconv.ParseFloat(c.Query("lat"), 64)
 	inpLng, _ := strconv.ParseFloat(c.Query("lng"), 64)
@@ -107,12 +113,14 @@ func getClosestArea(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, closestPlace)
 }
 
+// generates a randomized bus instance for testing/simulation
 func getBusLocation(c *gin.Context) {
 	var bus Bus
 	bus.Set()
 	c.JSON(http.StatusOK, bus)
 }
 
+// returns distance between source and location using Google Maps API
 func ReadDistance(c *gin.Context) {
 	var distance = GetDistance(c.Query("src"), c.Query("dest"))
 	var dist Distance

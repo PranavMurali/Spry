@@ -6,6 +6,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// defines a url to interact with the google maps api
 type Url struct {
 	Prefix       string
 	Transit_mode string
@@ -14,6 +15,7 @@ type Url struct {
 	URL          string
 }
 
+// url constructor to use the API
 func (u *Url) Set(transit_mode string, origin string, destination string) {
 	godotenv.Load("local.env")
 	u.Prefix = "https://maps.googleapis.com/maps/api/distancematrix/json?"

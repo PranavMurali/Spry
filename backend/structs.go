@@ -21,6 +21,7 @@ type Route struct {
 	RevPlaces   []string
 }
 
+// defines the return for getShortestRoute() i.e. a route and a forward flag to denote direction
 type ShortestRoute struct {
 	RawRoute    Route
 	ForwardFlag bool
@@ -31,6 +32,7 @@ type RouteList struct {
 	Routes []Route
 }
 
+// structs to handle google maps api response
 type Distance struct {
 	Destination_addresses []string
 	Origin_addresses      []string
