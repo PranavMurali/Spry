@@ -31,12 +31,6 @@ const Menu = () => {
         />
 
         <SpeedDial.Action
-          icon={{ name: 'directions-bus', color: '#fff', type:'material' }}
-          title="Bus Console"
-          onPress={() => navigation.navigate('Bus')}
-        />
-
-        <SpeedDial.Action
         icon={{ name: 'engineering', color: '#fff', type:'material' }}
         title="Admin Console"
         onPress={() => navigation.navigate('Admin')}

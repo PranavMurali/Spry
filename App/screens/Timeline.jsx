@@ -38,10 +38,7 @@ const Timeline = () => {
             <Text style={tw` ml-4 text-lg font-semibold text-white`}>Perfecting the backend functionality , adding new features and improving UI/UX</Text>
             <Text style={tw` ml-4 text-base font-normal text-gray-400`}>Proceed to develop and integrate better client and admin side functionality to allow service providers and the users to get the most out of the transit.</Text>
           </View>
-
         </View>
-
-
         </>
   )
 }

@@ -12,9 +12,7 @@ import Menu from "./screens/Menu";
 import Timeline from "./screens/Timeline";
 import Admin from "./screens/Admin";
 import Fleet from "./screens/Fleet";
-import Bus from "./screens/Bus";
 import { initializeApp } from "firebase/app";
-
 import { getFirestore, collection, getDocs } from 'firebase/firestore'
 
 export default function App() {
@@ -22,12 +20,12 @@ export default function App() {
 
     //Firebase configuration
     const firebaseConfig = {
-    apiKey: "AIzaSyDfCO4PmzD7WnD-vGh_YIaZS9lv2kwlnNY",
-    authDomain: "spry-c6f20.firebaseapp.com",
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
     projectId: "spry-c6f20",
-    storageBucket: "spry-c6f20.appspot.com",
-    messagingSenderId: "455979811101",
-    appId: "1:455979811101:web:bc1c4d4b433df1796ea1f4"
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
     };
 
     // Initialize Firebase
@@ -83,13 +81,6 @@ export default function App() {
                         <Stack.Screen
                             name="Fleet"
                             component={Fleet}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                        <Stack.Screen
-                            name="Bus"
-                            component={Bus}
                             options={{
                                 headerShown: false,
                             }}
