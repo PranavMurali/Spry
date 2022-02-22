@@ -10,6 +10,13 @@
         "Lalbagh Main Gate",
         "Jayanagara 4th Block",
         "J.P.Nagara PH VI"
+      ],
+      "revPlaces": [
+        "J.P.Nagara PH VI",
+        "Jayanagara 4th Block",
+        "Lalbagh Main Gate",
+        "Corporation",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -22,6 +29,13 @@
         "Majestic (KBS)",
         "Vijayanagara.",
         "Shivajinagara Bus Station"
+      ],
+      "revPlaces": [
+        "Shivajinagara Bus Station",
+        "Vijayanagara.",
+        "Majestic (KBS)",
+        "K.R.Circle",
+        "Chandra Layout"
       ]
     },
     {
@@ -34,6 +48,13 @@
         "Devasandra",
         "Nanjappa Circle,",
         "Vidyaranyapura"
+      ],
+      "revPlaces": [
+        "Vidyaranyapura",
+        "Nanjappa Circle,",
+        "Devasandra",
+        "Central Talkies",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -46,6 +67,13 @@
         "Hulimavu Gate",
         "Bannerghatta",
         "Bannerghatta National Park"
+      ],
+      "revPlaces": [
+        "Bannerghatta National Park",
+        "Bannerghatta",
+        "Hulimavu Gate",
+        "Wilson Garden Police Station",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -57,6 +85,12 @@
         "Bommanahalli,Agara,Marathahalli Bridge",
         "Kundalahalli Gate,Sri Sri Sathya Sai Hospital.",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Kundalahalli Gate,Sri Sri Sathya Sai Hospital.",
+        "Bommanahalli,Agara,Marathahalli Bridge",
+        "Electronic City"
       ]
     },
     {
@@ -69,6 +103,13 @@
         "III BTM Layout",
         "Domlur.",
         "C.V.Raman Nagara"
+      ],
+      "revPlaces": [
+        "C.V.Raman Nagara",
+        "Domlur.",
+        "III BTM Layout",
+        "Banashankari Stage",
+        "Srinagara"
       ]
     },
     {
@@ -83,6 +124,15 @@
         "M.M.Industries",
         "Kumaraswamy Layout,",
         "ISRO Layout"
+      ],
+      "revPlaces": [
+        "ISRO Layout",
+        "Kumaraswamy Layout,",
+        "M.M.Industries",
+        "Mahilaseva Samaja",
+        "K.R.Market",
+        "Corporation",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -96,6 +146,14 @@
         "Dasarahalli,Makali",
         "Binnamangala",
         "Nelamangala"
+      ],
+      "revPlaces": [
+        "Nelamangala",
+        "Binnamangala",
+        "Dasarahalli,Makali",
+        "Yeshwanthpura",
+        "Central Talkies",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -108,6 +166,13 @@
         "Maharani\u2019s College",
         "Cauvery Bhavan,",
         "Electronic City"
+      ],
+      "revPlaces": [
+        "Electronic City",
+        "Cauvery Bhavan,",
+        "Maharani\u2019s College",
+        "Sadashivanagara Police Station",
+        "Vidyaranyapura"
       ]
     },
     {
@@ -121,6 +186,14 @@
         "Kundalahalli",
         "Varthur",
         "Gunjur"
+      ],
+      "revPlaces": [
+        "Gunjur",
+        "Varthur",
+        "Kundalahalli",
+        "HAL Main Gate",
+        "Domlur",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -133,6 +206,13 @@
         "Graphite India Ltd",
         "Hope Farm,",
         "Kadugodi Bus Station"
+      ],
+      "revPlaces": [
+        "Kadugodi Bus Station",
+        "Hope Farm,",
+        "Graphite India Ltd",
+        "Manipal Hospital",
+        "Shivajinagara Bus Station"
       ]
     },
     {
@@ -145,6 +225,13 @@
         "Military Accounts",
         "HAL Main Gate,",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "HAL Main Gate,",
+        "Military Accounts",
+        "Corporation",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -156,6 +243,12 @@
         "Maharani\u2019s College",
         "Corporation,Domlur HAL Main Gate",
         "Marathahalli Bridge"
+      ],
+      "revPlaces": [
+        "Marathahalli Bridge",
+        "Corporation,Domlur HAL Main Gate",
+        "Maharani\u2019s College",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -167,6 +260,12 @@
         "HAL Kalyanamantapa",
         "Marathahalli,",
         "Marathhahalli Bridge"
+      ],
+      "revPlaces": [
+        "Marathhahalli Bridge",
+        "Marathahalli,",
+        "HAL Kalyanamantapa",
+        "Nagarabhavi BDA Complex"
       ]
     },
     {
@@ -180,13 +279,22 @@
         "AECS Layout",
         "ITPL",
         "Kadugodi Bus Station"
+      ],
+      "revPlaces": [
+        "Kadugodi Bus Station",
+        "ITPL",
+        "AECS Layout",
+        "Manipal Hospital",
+        "Mayo Hall",
+        "Majestic (KBS)"
       ]
     },
     {
       "routeName": "335EA",
       "origin": "Yeshwantpura",
       "destination": "ITPL",
-      "places": ["Yeshwantpura", "Swastik ,KR Circle", "Corporation", "ITPL"]
+      "places": ["Yeshwantpura", "Swastik ,KR Circle", "Corporation", "ITPL"],
+      "revPlaces": ["ITPL", "Corporation", "Swastik ,KR Circle", "Yeshwantpura"]
     },
     {
       "routeName": "356C",
@@ -199,6 +307,14 @@
         "Bommanahalli",
         "Electronic City,",
         "Electronic City"
+      ],
+      "revPlaces": [
+        "Electronic City",
+        "Electronic City,",
+        "Bommanahalli",
+        "Madiwala",
+        "Wilson Garden Police Station",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -213,6 +329,15 @@
         "Naryana Hurdalaya",
         "Chandapura",
         "Anekal"
+      ],
+      "revPlaces": [
+        "Anekal",
+        "Chandapura",
+        "Naryana Hurdalaya",
+        "Electronicity",
+        "Bommanahalli",
+        "Shanthi Nagar",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -226,6 +351,14 @@
         "Bommanahalli",
         "Electronic City,",
         "Narayana Hrudayalaya"
+      ],
+      "revPlaces": [
+        "Narayana Hrudayalaya",
+        "Electronic City,",
+        "Bommanahalli",
+        "Madiwala",
+        "Wilson Garden Police Station",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -240,6 +373,15 @@
         "Bommanahalli",
         "Electronic City",
         "Electronic City"
+      ],
+      "revPlaces": [
+        "Electronic City",
+        "Electronic City",
+        "Bommanahalli",
+        "Madiwala",
+        "Majestic (KBS) Wilson Garden Police Station",
+        "Sujatha",
+        "Basavewshwaranagar"
       ]
     },
     {
@@ -258,6 +400,19 @@
         "Hosa Road",
         "Electronic City",
         "Electronic City (Wipro Gate)"
+      ],
+      "revPlaces": [
+        "Electronic City (Wipro Gate)",
+        "Electronic City",
+        "Hosa Road",
+        "Bommanahalli",
+        "BTM Layout",
+        "Jayanagar 9th East Block",
+        "Jayanagar Bus tand",
+        "Southend Circle",
+        "Lalbagh Main Gate",
+        "Corporation",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -272,6 +427,15 @@
         "Electronic City",
         "Chandapura.",
         "Attibele"
+      ],
+      "revPlaces": [
+        "Attibele",
+        "Chandapura.",
+        "Electronic City",
+        "Bommanahalli",
+        "Madiwala",
+        "Wilson Garden Police Station",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -288,6 +452,17 @@
         "Madiwala",
         "Bommanahalli",
         "Electronic City"
+      ],
+      "revPlaces": [
+        "Electronic City",
+        "Bommanahalli",
+        "Madiwala",
+        "Krupanidhi College",
+        "Adugodi",
+        "Johnson Market",
+        "Mayo Hall",
+        "Indian Express",
+        "Shivajinagara Bus Station"
       ]
     },
     {
@@ -300,6 +475,13 @@
         "Koramangala 80Ft Road",
         "Hulimavu Gate",
         "Marathahalli Bridge"
+      ],
+      "revPlaces": [
+        "Marathahalli Bridge",
+        "Hulimavu Gate",
+        "Koramangala 80Ft Road",
+        "HAL Main Gate",
+        "Bannerghatta National Park"
       ]
     },
     {
@@ -313,6 +495,14 @@
         "Siddapura",
         "Hope Form",
         "Kadigodi"
+      ],
+      "revPlaces": [
+        "Kadigodi",
+        "Hope Form",
+        "Siddapura",
+        "Jn. of 80ft Road,J n of Dupanahalli,HAL Main Gate,Marathahalli Bridge",
+        "Hombegowda Police Station",
+        "Shanti Nagar Bus Station"
       ]
     },
     {
@@ -325,6 +515,13 @@
         "Chamrajpet",
         "Hoskere Halli Cross,",
         "BSK 3rd Stg 3rd Phase"
+      ],
+      "revPlaces": [
+        "BSK 3rd Stg 3rd Phase",
+        "Hoskere Halli Cross,",
+        "Chamrajpet",
+        "Cottonpet Hospital",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -341,6 +538,17 @@
         "Kadabisanahalli",
         "Kundanahalli Gate,Sri Sathhya Sai Hospital",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Kundanahalli Gate,Sri Sathhya Sai Hospital",
+        "Kadabisanahalli",
+        "Agara",
+        "BTM Layout",
+        "BSK",
+        "Hoskerehalli Cross",
+        "BEML Complex",
+        "Kenchenhalli Gate"
       ]
     },
     {
@@ -354,6 +562,14 @@
         "K.R.Puram Rly.Stn",
         "Kalyana Nagara.",
         "Hebbala"
+      ],
+      "revPlaces": [
+        "Hebbala",
+        "Kalyana Nagara.",
+        "K.R.Puram Rly.Stn",
+        "Agara",
+        "BTM Layout",
+        "Banashankari"
       ]
     },
     {
@@ -366,6 +582,13 @@
         "K.R.Puram Rly.Stn,Marathhalli Bridge",
         "Agara.",
         "Central Silk Board"
+      ],
+      "revPlaces": [
+        "Central Silk Board",
+        "Agara.",
+        "K.R.Puram Rly.Stn,Marathhalli Bridge",
+        "Kalyanagara Bus Stand",
+        "Hebbala"
       ]
     },
     {
@@ -378,6 +601,13 @@
         "Marathalli Bridge",
         "Sri Sri Sathya Sai Hospital,",
         "Hope Form"
+      ],
+      "revPlaces": [
+        "Hope Form",
+        "Sri Sri Sathya Sai Hospital,",
+        "Marathalli Bridge",
+        "Nagawara Road,Channasandra,KR Puram Rly Station",
+        "Hebbala"
       ]
     },
     {
@@ -391,6 +621,14 @@
         "BTM Layout,Agara,Kundalahalli",
         "Sri Sathya Sai Hospital",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Sri Sathya Sai Hospital",
+        "BTM Layout,Agara,Kundalahalli",
+        "Hosakerehalli Cross",
+        "Attiguppe",
+        "Vijayangara"
       ]
     },
     {
@@ -406,6 +644,16 @@
         "Kundanahalli Gate",
         "Sri Sri Sathya Sai Hospital",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Sri Sri Sathya Sai Hospital",
+        "Kundanahalli Gate",
+        "Kadabisanahalli",
+        "Agara",
+        "SI Apartment (HSR)",
+        "Jayanagar 9th Block East",
+        "Kalyani Magnum (JP Nagar)"
       ]
     },
     {
@@ -419,6 +667,14 @@
         "BSK",
         "Marathahalli",
         "Kadugodi Bus Station"
+      ],
+      "revPlaces": [
+        "Kadugodi Bus Station",
+        "Marathahalli",
+        "BSK",
+        "Kattariguppe",
+        "RV College",
+        "Kengeri Housing Board QRTS"
       ]
     },
     {
@@ -432,6 +688,14 @@
         "Jn. of Sarjapura Road",
         "Graphite India Ltd.",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Graphite India Ltd.",
+        "Jn. of Sarjapura Road",
+        "Banashankari Bus Stand",
+        "Kathriguppe Cross",
+        "Vijayangara"
       ]
     },
     {
@@ -443,6 +707,12 @@
         "Padamanabhanagar,Devegowda Petrol Bunk,BSK BDA Complex,Mono Type",
         "Corporation,Banashankari",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Corporation,Banashankari",
+        "Padamanabhanagar,Devegowda Petrol Bunk,BSK BDA Complex,Mono Type",
+        "Chikkalasandra Bus Station"
       ]
     },
     {
@@ -458,6 +728,16 @@
         "Kundala Halli",
         "Graphite India Ltd",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Graphite India Ltd",
+        "Kundala Halli",
+        "Marathahalli Bridge",
+        "Jn. of Sarjapura Road",
+        "BTM Layout",
+        "Banashankari",
+        "ISRO Layout"
       ]
     },
     {
@@ -472,6 +752,15 @@
         "Singhasandra",
         "Konappana Agrahara",
         "Electronic City (Wipro Gate)"
+      ],
+      "revPlaces": [
+        "Electronic City (Wipro Gate)",
+        "Konappana Agrahara",
+        "Singhasandra",
+        "Madiwala",
+        "Koramangala water Tank",
+        "Dell IT Complex ",
+        "Domlur"
       ]
     },
     {
@@ -485,6 +774,14 @@
         "Konappana Agrahara",
         "Hebbagodi.",
         "Narayana Hrudayalaya"
+      ],
+      "revPlaces": [
+        "Narayana Hrudayalaya",
+        "Hebbagodi.",
+        "Konappana Agrahara",
+        "BTM Layout",
+        "Kathriguppe Cross",
+        "Vijayangara"
       ]
     },
     {
@@ -502,6 +799,18 @@
         "Electronic City",
         "Electronic city Phase II",
         "Electronic City (PH II)"
+      ],
+      "revPlaces": [
+        "Electronic City (PH II)",
+        "Electronic city Phase II",
+        "Electronic City",
+        "Bommanahalli",
+        "Central Silk Board",
+        "BTM Layout",
+        "BSK",
+        "PES College",
+        "Vijayanagar",
+        "Vijayangara"
       ]
     },
     {
@@ -512,6 +821,11 @@
         "Chikkalasandra Bus Station",
         "Padamanabha nagar,Devegowda Petrol Bunk,BSK",
         "Electronic City (Wipro Gate)"
+      ],
+      "revPlaces": [
+        "Electronic City (Wipro Gate)",
+        "Padamanabha nagar,Devegowda Petrol Bunk,BSK",
+        "Chikkalasandra Bus Station"
       ]
     },
     {
@@ -524,6 +838,13 @@
         "Chamrajpet",
         "Nagendra Block,",
         "Avalahalli BDA Park"
+      ],
+      "revPlaces": [
+        "Avalahalli BDA Park",
+        "Nagendra Block,",
+        "Chamrajpet",
+        "Cottonpet Hospital",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -537,6 +858,14 @@
         "Yeshwanthpura",
         "Jalahalli Cross,",
         "Chikkabanavara"
+      ],
+      "revPlaces": [
+        "Chikkabanavara",
+        "Jalahalli Cross,",
+        "Yeshwanthpura",
+        "Mallehwaram",
+        "Central Talkies",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -549,6 +878,13 @@
         "Malleshwaram",
         "Modi Hospital",
         "Basaveshwara Nagar"
+      ],
+      "revPlaces": [
+        "Basaveshwara Nagar",
+        "Modi Hospital",
+        "Malleshwaram",
+        "KBS",
+        "Kuvempu Nagar"
       ]
     },
     {
@@ -559,6 +895,11 @@
         "Majestic (KBS)",
         "MRC College,Coles Park,Maruti seva nagar",
         "Banasawadi"
+      ],
+      "revPlaces": [
+        "Banasawadi",
+        "MRC College,Coles Park,Maruti seva nagar",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -570,6 +911,12 @@
         "Corporation",
         "Mayo Hall,Tippasandra",
         "Mallesh Palya"
+      ],
+      "revPlaces": [
+        "Mallesh Palya",
+        "Mayo Hall,Tippasandra",
+        "Corporation",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -581,6 +928,12 @@
         "Corporation,HAL Main Gate",
         "Marathahalli",
         "Doddanekunte"
+      ],
+      "revPlaces": [
+        "Doddanekunte",
+        "Marathahalli",
+        "Corporation,HAL Main Gate",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -594,6 +947,14 @@
         "Marathahalli Bridge",
         "Sri Sri Sathya Sai Hospital",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Sri Sri Sathya Sai Hospital",
+        "Marathahalli Bridge",
+        "Mayo Hall Manipal Hospital",
+        "Majestic (KBS)",
+        "Mahalaksmi Layout"
       ]
     },
     {
@@ -608,6 +969,15 @@
         "Marathahalli Bridge",
         "Sathyasai Hospital",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Sathyasai Hospital",
+        "Marathahalli Bridge",
+        "Manipal Hospital",
+        "Mayo Hall",
+        "Majestic (KBS)",
+        "Basaveshwarnagara bus stand"
       ]
     },
     {
@@ -621,6 +991,14 @@
         "Bannerghatta",
         "Jigani",
         "Anekal"
+      ],
+      "revPlaces": [
+        "Anekal",
+        "Jigani",
+        "Bannerghatta",
+        "Hulimavu Gate",
+        "Wilson Garden Police Station",
+        "Majestic (KBS)"
       ]
     },
     {
@@ -636,6 +1014,16 @@
         "Central Silk Board",
         "Bommanahalli",
         "Electronic City (Infosys)"
+      ],
+      "revPlaces": [
+        "Electronic City (Infosys)",
+        "Bommanahalli",
+        "Central Silk Board",
+        "BTM Layout",
+        "Jayanagar 9th Block East",
+        "Banashankari",
+        "Uttarahalli",
+        "Kengeri Housing Board QRTS"
       ]
     },
     {
@@ -651,6 +1039,16 @@
         "HAL Main Gate",
         "Marathahalli",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Marathahalli",
+        "HAL Main Gate",
+        "Bangalore Club",
+        "Majestic (KBS)",
+        "Mekhri Circle",
+        "Hebbal",
+        "Yelahanka Sat Town PH V"
       ]
     },
     {
@@ -665,6 +1063,15 @@
         "Central silk Board",
         "Bommanahalli",
         "Electronic City"
+      ],
+      "revPlaces": [
+        "Electronic City",
+        "Bommanahalli",
+        "Central silk Board",
+        "Agara",
+        "Marathahalli Bridge",
+        "Hebbala Ring Road",
+        "Yelahanka"
       ]
     },
     {
@@ -683,6 +1090,19 @@
         "Kundalahalli",
         "Sri Sri Sathya Sai Hospital",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "Sri Sri Sathya Sai Hospital",
+        "Kundalahalli",
+        "Agara",
+        "BTM Layout",
+        "Hosakerehalli Cross",
+        "PES College",
+        "Vijayanagara",
+        "ISKON",
+        "Yeshwanthpura Bus Station",
+        "Chowdeshwari Bus Station"
       ]
     },
     {
@@ -698,6 +1118,16 @@
         "Agara",
         "marathahalli bridge",
         "ITPL"
+      ],
+      "revPlaces": [
+        "ITPL",
+        "marathahalli bridge",
+        "Agara",
+        "Banashankari",
+        "Chandra layout",
+        "Nagarabavi Circle",
+        "DR.AIT",
+        "Nagarabhavi (BDA Complex)"
       ]
     },
     {
@@ -712,6 +1142,15 @@
         "Banashankari",
         "Bommanahalli",
         "Electronic City"
+      ],
+      "revPlaces": [
+        "Electronic City",
+        "Bommanahalli",
+        "Banashankari",
+        "Chandra Layout",
+        "Nagarabavi Circle",
+        "DR.AIT",
+        "Nagarabhavi (BDA Complex)"
       ]
     },
     {
@@ -725,6 +1164,14 @@
         "Madiwala",
         "Bommanahalli",
         "Brigade Road"
+      ],
+      "revPlaces": [
+        "Brigade Road",
+        "Bommanahalli",
+        "Madiwala",
+        "Krupanidhi college",
+        "Adugodi",
+        "Electronic City Wipro Gate"
       ]
     }
   ]

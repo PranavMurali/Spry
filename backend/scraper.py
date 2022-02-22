@@ -8,6 +8,7 @@ class Route():
     origin = None
     destination = None 
     places = None
+    revPlaces = None
 
     def __init__(self, routeName, origin, destination, places):
         self.routeName = routeName
@@ -17,6 +18,9 @@ class Route():
         self.places.append(origin)
         self.places += places.split(', ')
         self.places.append(destination)
+        self.revPlaces = list(reversed(self.places))
+
+
 
 class Place():
     name = None
@@ -46,17 +50,17 @@ for i in range(0, len(routes), 4):
     if routes[i+3].text == 'Adugodi, Krupanidhi college, Madiwala, Bommanahalli':
         break
 
-# json_string = json.dumps({"routes": [ob.__dict__ for ob in temp_routes]})
-# f = open("routes.json", "w")
-# f.write(json_string)
-# f.close()
+json_string = json.dumps({"routes": [ob.__dict__ for ob in temp_routes]})
+f = open("routes.json", "w")
+f.write(json_string)
+f.close()
 
 placesList = []
 
 for place in places:
     placesList.append(Place(place, random.uniform(12.0, 12.5), random.uniform(77.0, 78.0)))
 
-json_string = json.dumps({"places": [ob.__dict__ for ob in placesList]})
-f = open("places.json", "w")
-f.write(json_string)
-f.close()
+# json_string = json.dumps({"places": [ob.__dict__ for ob in placesList]})
+# f = open("places.json", "w")
+# f.write(json_string)
+# f.close()
