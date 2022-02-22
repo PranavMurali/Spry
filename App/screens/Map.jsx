@@ -1,7 +1,6 @@
 import React, {
     useState,
     useEffect,
-    useCallback,
     useMemo,
     useRef,
 } from "react";
@@ -14,7 +13,7 @@ import {
     TouchableOpacity,
     
 } from "react-native";
-import MapView, { MAP_TYPES, UrlTile, Marker } from "react-native-maps";
+import MapView, { MAP_TYPES, Marker } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 import * as Location from "expo-location";
@@ -50,8 +49,8 @@ const styles = StyleSheet.create({
         height: 40,
         width: "90%",
         margin: 12,
-        borderWidth: 1,
-        borderRadius: 20,
+        borderWidth: 0.2,
+        borderRadius: 40,
         padding: 10,
       },
 
@@ -174,19 +173,18 @@ const MapScreen = () => {
             </View>
             <BottomSheet index={1} snapPoints={snapPoints}>
                 <View style={styles.contentContainer}>
-                    <Text>Awesome 🎉</Text>
                     <TextInput style={styles.input} onChangeText={onChangeDestination} value={destination} placeholder="Search Destination"/>
                     <ScrollView>
                     {
                         filteredData.map((stop, index) => (
                             <View key={index} style={tw`flex-row mt-3`}>
+                                <View style={tw`w-80`}>
                                 <Text style={tw`font-black mt-2 mx-3`}>{stop.name}</Text>
-                                <Icon style={tw`ml-40`} name='location' color="black" type='octicon' />
+                                </View>
+                                <Icon style={tw`ml-4`} name='location' color="black" type='octicon' />
                             </View>
                             )
-                        )
-
-                        
+                        )                        
                     }
                     </ScrollView>
                     
