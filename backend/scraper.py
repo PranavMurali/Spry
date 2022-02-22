@@ -46,15 +46,15 @@ for i in range(0, len(routes), 4):
     if routes[i+3].text == 'Adugodi, Krupanidhi college, Madiwala, Bommanahalli':
         break
 
-json_string = json.dumps({"routes": [ob.__dict__ for ob in temp_routes]})
-f = open("routes.json", "w")
-f.write(json_string)
-f.close()
+# json_string = json.dumps({"routes": [ob.__dict__ for ob in temp_routes]})
+# f = open("routes.json", "w")
+# f.write(json_string)
+# f.close()
 
 placesList = []
 
 for place in places:
-    placesList.append(Place(place, random.uniform(77.0, 78.0), random.uniform(12.0, 12.5)))
+    placesList.append(Place(place, random.uniform(12.0, 12.5), random.uniform(77.0, 78.0)))
 
 json_string = json.dumps({"places": [ob.__dict__ for ob in placesList]})
 f = open("places.json", "w")
