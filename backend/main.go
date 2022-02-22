@@ -147,7 +147,7 @@ func getBusLocation(c *gin.Context) {
 }
 
 func ReadDistance(c *gin.Context) {
-	var distance = GetDistance("Bengaluru", "Mysore")
+	var distance = GetDistance("Bengaluru", "chennai")
 	var dist Distance
 	json.Unmarshal(distance, &dist)
 	c.IndentedJSON(http.StatusOK, dist.Rows[0].Elements[0].Distance.Text)
