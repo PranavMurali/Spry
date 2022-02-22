@@ -7,6 +7,7 @@ import (
 
 type Bus struct {
 	RouteName            string
+	BusId                string
 	FullCapacity         int32
 	CurrentCapacity      int32
 	MaintenanceRemaining int32
@@ -14,6 +15,7 @@ type Bus struct {
 	Lat                  float64
 	Lng                  float64
 	StartTime            time.Time
+	ToFinalStop          bool
 }
 
 func (b *Bus) Set() {
@@ -22,6 +24,7 @@ func (b *Bus) Set() {
 	routes := readRoutes().Routes
 	b.RouteName = randRoutes[rand.Intn(len(randRoutes)-1)]
 	b.FullCapacity = 50
+	b.BusId = "KN2304"
 	b.CurrentCapacity = int32(rand.Intn(int(b.FullCapacity)))
 	for _, route := range routes {
 		if b.RouteName == route.RouteName {
@@ -36,5 +39,7 @@ func (b *Bus) Set() {
 			break
 		}
 	}
+	flags := []bool{true, false}
+	b.ToFinalStop = flags[rand.Intn(2)]
 	b.StartTime = Randate()
 }

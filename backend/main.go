@@ -28,6 +28,12 @@ type Route struct {
 	Origin      string
 	Destination string
 	Places      []string
+	RevPlaces   []string
+}
+
+type ShortestRoute struct {
+	RawRoute    Route
+	ForwardFlag bool
 }
 
 // defines the routes.json input format (for reading only)
@@ -102,22 +108,40 @@ func getShortestRoute(c *gin.Context) {
 	dest := c.Query("dest")
 	routes := readRoutes()
 	minDist := 100
-	var shortestRoute Route
+	var shortestRoute ShortestRoute
 	for _, route := range routes.Routes {
-		sIndex := -1
-		dIndex := -1
+		sIndexlr := -1
+		dIndexlr := -1
+		sIndexrl := -1
+		dIndexrl := -1
 		for i, place := range route.Places {
 			if place == source {
-				sIndex = i
+				sIndexlr = i
 			}
 			if place == dest {
-				dIndex = i
+				dIndexlr = i
 			}
 		}
-		if sIndex < dIndex && sIndex != -1 && dIndex != -1 {
-			if dIndex-sIndex < minDist {
-				minDist = dIndex - sIndex
-				shortestRoute = route
+		if sIndexlr < dIndexlr && sIndexlr != -1 && dIndexlr != -1 {
+			if dIndexlr-sIndexlr < minDist {
+				minDist = dIndexlr - sIndexlr
+				shortestRoute.RawRoute = route
+				shortestRoute.ForwardFlag = true
+			}
+		}
+		for i, place := range route.RevPlaces {
+			if place == source {
+				sIndexrl = i
+			}
+			if place == dest {
+				dIndexrl = i
+			}
+		}
+		if sIndexrl < dIndexrl && sIndexrl != -1 && dIndexrl != -1 {
+			if dIndexrl-sIndexrl < minDist {
+				minDist = dIndexrl - sIndexrl
+				shortestRoute.RawRoute = route
+				shortestRoute.ForwardFlag = false
 			}
 		}
 	}
@@ -147,7 +171,7 @@ func getBusLocation(c *gin.Context) {
 }
 
 func ReadDistance(c *gin.Context) {
-	var distance = GetDistance("Bengaluru", "chennai")
+	var distance = GetDistance(c.Query("src"), c.Query("dest"))
 	var dist Distance
 	json.Unmarshal(distance, &dist)
 	c.IndentedJSON(http.StatusOK, dist.Rows[0].Elements[0].Distance.Text)
