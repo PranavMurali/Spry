@@ -11,6 +11,7 @@ import {
     View,
     Dimensions,
     TouchableOpacity,
+    TouchableHighlight,
     
 } from "react-native";
 import MapView, { MAP_TYPES, Marker } from "react-native-maps";
@@ -21,7 +22,8 @@ import { useNavigation } from "@react-navigation/core";
 import BottomSheet from "@gorhom/bottom-sheet";
 
 import stops from '../stops.json';
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView} from "react-native-gesture-handler";
+import { set } from "react-native-reanimated";
 
 const styles = StyleSheet.create({
     container: {
@@ -97,6 +99,10 @@ const MapScreen = () => {
         return item.name.toLowerCase().indexOf(destination.toLowerCase()) !== -1
     })
 
+    const setDestination = (destination) => {
+        onChangeDestination(destination)
+    }
+
     useEffect(() => {
         (async () => {
             let { status } = await Location.requestForegroundPermissionsAsync();
@@ -118,7 +124,7 @@ const MapScreen = () => {
     return (
         <>
             <View>
-                <TouchableOpacity
+                <TouchableHighlight underlayColor="lightgrey"
                     onPress={() => navigation.navigate("Menu")}
                     style={tw`bg-gray-100 absolute top-8 left-3 z-50 p-3 rounded-full shadow-lg`}
                 >
@@ -128,7 +134,7 @@ const MapScreen = () => {
                         color="#000"
                         size={30}
                     />
-                </TouchableOpacity>
+                </TouchableHighlight>
             </View>
             <View style={styles.container}>
                 <MapView
@@ -177,12 +183,11 @@ const MapScreen = () => {
                     <ScrollView>
                     {
                         filteredData.map((stop, index) => (
-                            <View key={index} style={tw`flex-row mt-3`}>
-                                <View style={tw`w-80`}>
-                                <Text style={tw`font-black mt-2 mx-3`}>{stop.name}</Text>
+                            <TouchableOpacity key={index} style={tw`flex-row mt-3`} underlayColor="black" onPress={() => setDestination(stop.name)}>
+                                <View> 
+                                    <Text style={tw`font-black mt-2 mx-3 w-80`}>{stop.name}</Text> 
                                 </View>
-                                <Icon style={tw`ml-4`} name='location' color="black" type='octicon' />
-                            </View>
+                            </TouchableOpacity>
                             )
                         )                        
                     }
