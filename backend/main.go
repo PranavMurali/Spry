@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/bradfitz/slice"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,54 +17,6 @@ func getPlaces(c *gin.Context) {
 // returns routes as json (endpoint)
 func getRoutes(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, readRoutes().Routes)
-}
-
-// iterates through all possible routes to find a route where the source is before destination and the distance between
-// them is shortest. Also checks the return route and denotes the route direction using a flag (ForwardFlag)
-// Returns the route and flag
-func getShortestRoute(c *gin.Context) {
-	source := c.Query("source")
-	dest := c.Query("dest")
-	routes := readRoutes()
-	minDist := 100
-	var shortestRoute ShortestRoute
-	for _, route := range routes.Routes {
-		sIndexlr := -1 // index of source when array is traversed from left to right (forward route)
-		dIndexlr := -1 // index of destination when array is traversed from left to right (forward route)
-		sIndexrl := -1 // index of source when array is traversed from right to left (return route)
-		dIndexrl := -1 // index of destination when array is traversed from right to left (return route)
-		for i, place := range route.Places {
-			if place == source {
-				sIndexlr = i
-			}
-			if place == dest {
-				dIndexlr = i
-			}
-		}
-		if sIndexlr < dIndexlr && sIndexlr != -1 && dIndexlr != -1 {
-			if dIndexlr-sIndexlr < minDist {
-				minDist = dIndexlr - sIndexlr
-				shortestRoute.RawRoute = route
-				shortestRoute.ForwardFlag = true
-			}
-		}
-		for i, place := range route.RevPlaces {
-			if place == source {
-				sIndexrl = i
-			}
-			if place == dest {
-				dIndexrl = i
-			}
-		}
-		if sIndexrl < dIndexrl && sIndexrl != -1 && dIndexrl != -1 {
-			if dIndexrl-sIndexrl < minDist {
-				minDist = dIndexrl - sIndexrl
-				shortestRoute.RawRoute = route
-				shortestRoute.ForwardFlag = false
-			}
-		}
-	}
-	c.IndentedJSON(http.StatusOK, shortestRoute)
 }
 
 // gets the closest area(place) given coordinates (latitude, longitude)
@@ -84,7 +37,7 @@ func getClosestArea(c *gin.Context) {
 }
 
 // generates a randomized bus instance for testing/simulation
-func getBusLocation(c *gin.Context) {
+func getBusDetails(c *gin.Context) {
 	var bus Bus
 	bus.Set()
 	c.JSON(http.StatusOK, bus)
@@ -98,14 +51,37 @@ func ReadDistance(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, dist.Rows[0].Elements[0].Distance.Text)
 }
 
+func GetBuses(c *gin.Context) {
+
+	source := c.Query("source")
+	dest := c.Query("dest")
+	sort := c.Query("sort")
+	shortestRoute := getShortestRoute(source, dest)
+	filteredBusses := getBuses(shortestRoute.RawRoute.RouteName, shortestRoute.ForwardFlag)
+
+	if sort == "capacity" {
+		slice.Sort(filteredBusses[:], func(i, j int) bool {
+			return filteredBusses[i].CurrentCapacity < filteredBusses[j].CurrentCapacity
+		})
+	}
+
+	if sort == "price" {
+		slice.Sort(filteredBusses[:], func(i, j int) bool {
+			return filteredBusses[i].Price < filteredBusses[j].Price
+		})
+	}
+
+	c.IndentedJSON(http.StatusOK, filteredBusses)
+}
+
 func main() {
 	router := gin.Default()
 	router.GET("/places", getPlaces)
 	router.GET("/routes", getRoutes)
-	router.POST("/shortestroute", getShortestRoute)
 	router.POST("/closestarea", getClosestArea)
-	router.GET("/getbuslocation", getBusLocation)
+	router.GET("/getbusDetails", getBusDetails)
 	router.GET("/readdistance", ReadDistance)
+	router.GET("/getbuses", GetBuses)
 
 	router.Run("localhost:8080")
 }

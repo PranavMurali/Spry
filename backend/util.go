@@ -105,3 +105,68 @@ func GetDistance(origin string, destination string) []byte {
 
 	return body
 }
+
+// iterates through all possible routes to find a route where the source is before destination and the distance between
+// them is shortest. Also checks the return route and denotes the route direction using a flag (ForwardFlag)
+// Returns the route and flag
+func getShortestRoute(source string, dest string) ShortestRoute {
+	routes := readRoutes()
+	minDist := 100
+	var shortestRoute ShortestRoute
+	for _, route := range routes.Routes {
+		sIndexlr := -1 // index of source when array is traversed from left to right (forward route)
+		dIndexlr := -1 // index of destination when array is traversed from left to right (forward route)
+		sIndexrl := -1 // index of source when array is traversed from right to left (return route)
+		dIndexrl := -1 // index of destination when array is traversed from right to left (return route)
+		for i, place := range route.Places {
+			if place == source {
+				sIndexlr = i
+			}
+			if place == dest {
+				dIndexlr = i
+			}
+		}
+		if sIndexlr < dIndexlr && sIndexlr != -1 && dIndexlr != -1 {
+			if dIndexlr-sIndexlr < minDist {
+				minDist = dIndexlr - sIndexlr
+				shortestRoute.RawRoute = route
+				shortestRoute.ForwardFlag = true
+			}
+		}
+		for i, place := range route.RevPlaces {
+			if place == source {
+				sIndexrl = i
+			}
+			if place == dest {
+				dIndexrl = i
+			}
+		}
+		if sIndexrl < dIndexrl && sIndexrl != -1 && dIndexrl != -1 {
+			if dIndexrl-sIndexrl < minDist {
+				minDist = dIndexrl - sIndexrl
+				shortestRoute.RawRoute = route
+				shortestRoute.ForwardFlag = false
+			}
+		}
+	}
+
+	return shortestRoute
+}
+
+func getBuses(RouteName string, ForwardFlag bool) []Bus {
+	var buses []Bus
+	for i := 0; i < 10; i++ {
+		var bus Bus
+		bus.Set()
+		buses = append(buses, bus)
+	}
+
+	var filteredBusses []Bus
+
+	for _, bus := range buses {
+		if bus.RouteName == RouteName && bus.ForwardFlag == ForwardFlag {
+			filteredBusses = append(filteredBusses, bus)
+		}
+	}
+	return filteredBusses
+}
