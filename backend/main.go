@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -56,6 +57,7 @@ func GetBuses(c *gin.Context) {
 	source := c.Query("source")
 	dest := c.Query("dest")
 	sort := c.Query("sort")
+	var dist Distance
 	shortestRoute := getShortestRoute(source, dest)
 	filteredBusses := getBuses(shortestRoute.RawRoute.RouteName, shortestRoute.ForwardFlag)
 
@@ -68,6 +70,20 @@ func GetBuses(c *gin.Context) {
 	if sort == "price" {
 		slice.Sort(filteredBusses[:], func(i, j int) bool {
 			return filteredBusses[i].Price < filteredBusses[j].Price
+		})
+	}
+
+	if sort == "distance" {
+		fmt.Print("stedi")
+		for _, bus := range filteredBusses {
+			distance := GetDistanceLatLong(source, bus.Lat, bus.Lng)
+			json.Unmarshal(distance, &dist)
+			fmt.Println(dist)
+			bus.DistanceFromUser, _ = strconv.ParseFloat(dist.Rows[0].Elements[0].Distance.Text, 64)
+
+		}
+		slice.Sort(filteredBusses[:], func(i, j int) bool {
+			return filteredBusses[i].DistanceFromUser < filteredBusses[j].DistanceFromUser
 		})
 	}
 
