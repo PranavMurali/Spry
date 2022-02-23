@@ -59,7 +59,7 @@ func GetBuses(c *gin.Context) {
 	sort := c.Query("sort")
 	var dist Distance
 	shortestRoute := getShortestRoute(source, dest)
-	filteredBusses := getBuses(shortestRoute.RawRoute.RouteName, shortestRoute.ForwardFlag)
+	filteredBusses := getBuses(shortestRoute.RawRoute, shortestRoute.ForwardFlag, source)
 
 	if sort == "capacity" {
 		slice.Sort(filteredBusses[:], func(i, j int) bool {

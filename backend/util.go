@@ -140,7 +140,7 @@ func getShortestRoute(source string, dest string) ShortestRoute {
 	return shortestRoute
 }
 
-func getBuses(RouteName string, ForwardFlag bool) []Bus {
+func getBuses(R Route, ForwardFlag bool, source string) []Bus {
 	var buses []Bus
 	for i := 0; i < 10; i++ {
 		var bus Bus
@@ -148,12 +148,28 @@ func getBuses(RouteName string, ForwardFlag bool) []Bus {
 		buses = append(buses, bus)
 	}
 
-	var filteredBusses []Bus
-
+	var filteredBuses []Bus
+	var useridx, busidx int
 	for _, bus := range buses {
-		if bus.RouteName == RouteName && bus.ForwardFlag == ForwardFlag {
-			filteredBusses = append(filteredBusses, bus)
+		if bus.RouteName == R.RouteName {
+			for index, place := range R.Places {
+				if place == source {
+					useridx = index
+				}
+				if place == bus.StopCrossed {
+					busidx = index
+				}
+			}
+			if ForwardFlag {
+				if useridx > busidx {
+					filteredBuses = append(filteredBuses, bus)
+				}
+			} else {
+				if useridx < busidx {
+					filteredBuses = append(filteredBuses, bus)
+				}
+			}
 		}
 	}
-	return filteredBusses
+	return filteredBuses
 }

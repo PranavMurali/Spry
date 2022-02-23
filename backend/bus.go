@@ -12,7 +12,7 @@ type Bus struct {
 	FullCapacity         int32
 	CurrentCapacity      int32
 	MaintenanceRemaining int32
-	BusStop              string
+	StopCrossed          string
 	Lat                  float64
 	Lng                  float64
 	StartTime            time.Time
@@ -33,9 +33,9 @@ func (b *Bus) Set() {
 	b.Price = float64(rand.Intn(100))
 	for _, route := range routes {
 		if b.RouteName == route.RouteName {
-			b.BusStop = route.Places[rand.Intn(len(route.Places)-1)]
+			b.StopCrossed = route.Places[rand.Intn(len(route.Places)-1)]
 			for _, place := range places {
-				if b.BusStop == place.Name {
+				if b.StopCrossed == place.Name {
 					b.Lat = place.Lat
 					b.Lng = place.Lng
 					break
