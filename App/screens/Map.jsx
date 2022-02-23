@@ -13,11 +13,9 @@ import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/core";
-import BottomSheet from "@gorhom/bottom-sheet";
-
+import MapModal from "../components/MapModal";
 import stops from "../stops.json";
 import { ScrollView } from "react-native-gesture-handler";
-import { set } from "react-native-reanimated";
 
 const styles = StyleSheet.create({
     container: {
@@ -31,8 +29,9 @@ const styles = StyleSheet.create({
         height: Dimensions.get("window").height,
     },
     container: {
-        flex: 1,
-        backgroundColor: "grey",
+        marginTop: 30,
+        height: Dimensions.get("window").height,
+        backgroundColor: "white",
     },
     contentContainer: {
         flex: 1,
@@ -58,8 +57,7 @@ const styles = StyleSheet.create({
 
 const MapScreen = () => {
     const navigation = useNavigation();
-    const bottomSheetRef = useRef < BottomSheet > null;
-    const forceUpdate = React.useReducer((bool) => !bool)[1];
+    const [modalVisible, setModalVisible] = useState(false);
     const markersInit = [
         {
             title: "Mayo Hall Manipal Hospital",
@@ -110,8 +108,6 @@ const MapScreen = () => {
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
             setMarkers(markersInit);
-            console.log(location["coords"]["latitude"]);
-            console.log(location["coords"]["longitude"]);
         })();
     }, []);
     // variables
@@ -119,21 +115,21 @@ const MapScreen = () => {
 
     return (
         <>
-            <View>
-                <TouchableHighlight
-                    underlayColor="lightgrey"
-                    onPress={() => navigation.navigate("Menu")}
-                    style={tw`bg-gray-100 absolute top-8 left-3 z-50 p-3 rounded-full shadow-lg`}
-                >
-                    <Icon
-                        name="menu"
-                        type="material-community"
-                        color="#000"
-                        size={30}
-                    />
-                </TouchableHighlight>
-            </View>
             <View style={styles.container}>
+                <View>
+                    <TouchableHighlight
+                        underlayColor="lightgrey"
+                        onPress={() => navigation.navigate("Menu")}
+                        style={tw`bg-gray-100 absolute top-8 left-3 z-50 p-3 rounded-full shadow-lg`}
+                    >
+                        <Icon
+                            name="menu"
+                            type="material-community"
+                            color="#000"
+                            size={30}
+                        />
+                    </TouchableHighlight>
+                </View>
                 <MapView
                     region={{
                         latitude: location["coords"]["latitude"],
@@ -155,57 +151,61 @@ const MapScreen = () => {
                         maximumZ={19}
 
                     /> */}
-                    {markers.map(
-                        (marker, index) => (
-                            console.log("marker lat - " + marker["latitude"]),
-                            console.log("marker long - " + marker["longitude"]),
-                            (
-                                <Marker
-                                    key={index + "_" + Date.now()}
-                                    title={marker.title}
-                                    coordinate={{
-                                        latitude: marker.latitude,
-                                        longitude: marker.longitude,
-                                    }}
-                                    icon={require("../assets/bus-stop.png")}
-                                />
-                            )
-                        )
-                    )}
-                    {/* {forceUpdate()} */}
+                    {markers.map((marker, index) => (
+                        <Marker
+                            key={index + "_" + Date.now()}
+                            title={marker.title}
+                            coordinate={{
+                                latitude: marker.latitude,
+                                longitude: marker.longitude,
+                            }}
+                            icon={require("../assets/bus-stop.png")}
+                        />
+                    ))}
                 </MapView>
             </View>
-            <BottomSheet index={1} snapPoints={snapPoints}>
-                <View style={styles.contentContainer}>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={onChangeDestination}
-                        value={destination}
-                        placeholder="Search Destination"
-                        returnKeyType="search"
-                        onSubmitEditing={() =>
-                            setDestination(filteredData[0].name)
-                        }
-                    />
-                    <Text>{destination}</Text>
-                    <ScrollView>
-                        {filteredData.map((stop, index) => (
-                            <TouchableOpacity
-                                key={index}
-                                style={tw`flex-row mt-3`}
-                                underlayColor="black"
-                                onPress={() => setDestination(stop.name)}
-                            >
-                                <View>
-                                    <Text style={tw`font-black mt-2 mx-3 w-80`}>
-                                        {stop.name}
-                                    </Text>
-                                </View>
-                            </TouchableOpacity>
-                        ))}
-                    </ScrollView>
-                </View>
-            </BottomSheet>
+            <TouchableHighlight
+                underlayColor="lightgrey"
+                onPress={() => setModalVisible(true)}
+                style={tw`bg-gray-100 absolute bottom-8 self-center z-50 p-3 rounded-full shadow-lg`}
+            >
+                <Icon
+                    name="arrow-up-drop-circle-outline"
+                    type="material-community"
+                    color="#000"
+                    size={30}
+                />
+            </TouchableHighlight>
+            <MapModal
+                setModalVisible={setModalVisible}
+                modalVisible={modalVisible}
+            >
+                <TextInput
+                    style={styles.input}
+                    onChangeText={onChangeDestination}
+                    value={destination}
+                    placeholder="Search Destination"
+                    returnKeyType="search"
+                    onSubmitEditing={() => setDestination(filteredData[0].name)}
+                />
+                <Text>{destination}</Text>
+                <ScrollView>
+                    {filteredData.map((stop, index) => (
+                        <TouchableOpacity
+                            key={index}
+                            style={tw`flex-row mt-3`}
+                            underlayColor="black"
+                            onPress={() => setDestination(stop.name)}
+                        >
+                            <View>
+                                <Text style={tw`font-black mt-2 mx-3 w-80`}>
+                                    {stop.name}
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    ))}
+                </ScrollView>
+            </MapModal>
         </>
     );
 };
