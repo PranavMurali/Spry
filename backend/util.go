@@ -111,8 +111,7 @@ func getShortestRoute(source string, dest string) ShortestRoute {
 	for _, route := range routes.Routes {
 		sIndexlr := -1 // index of source when array is traversed from left to right (forward route)
 		dIndexlr := -1 // index of destination when array is traversed from left to right (forward route)
-		sIndexrl := -1 // index of source when array is traversed from right to left (return route)
-		dIndexrl := -1 // index of destination when array is traversed from right to left (return route)
+
 		for i, place := range route.Places {
 			if place == source {
 				sIndexlr = i
@@ -128,17 +127,10 @@ func getShortestRoute(source string, dest string) ShortestRoute {
 				shortestRoute.ForwardFlag = true
 			}
 		}
-		for i, place := range route.RevPlaces {
-			if place == source {
-				sIndexrl = i
-			}
-			if place == dest {
-				dIndexrl = i
-			}
-		}
-		if sIndexrl < dIndexrl && sIndexrl != -1 && dIndexrl != -1 {
-			if dIndexrl-sIndexrl < minDist {
-				minDist = dIndexrl - sIndexrl
+
+		if sIndexlr > dIndexlr && sIndexlr != -1 && dIndexlr != -1 {
+			if sIndexlr-dIndexlr < minDist {
+				minDist = sIndexlr - dIndexlr
 				shortestRoute.RawRoute = route
 				shortestRoute.ForwardFlag = false
 			}
