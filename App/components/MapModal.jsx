@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import {
     Alert,
     Modal,
@@ -9,7 +8,6 @@ import {
     TouchableHighlight,
 } from "react-native";
 import { Icon } from "react-native-elements";
-import tw from "tailwind-react-native-classnames";
 import React from "react";
 
 const MapModal = (props) => {
@@ -46,7 +44,6 @@ export default MapModal;
 const styles = StyleSheet.create({
     modalView: {
         marginTop: 100,
-        // margin: 20,
         height: "100%",
         backgroundColor: "white",
         borderRadius: 20,

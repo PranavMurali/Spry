@@ -110,8 +110,6 @@ const MapScreen = () => {
             setMarkers(markersInit);
         })();
     }, []);
-    // variables
-    const snapPoints = useMemo(() => ["25%", "50%"], []);
 
     return (
         <>
