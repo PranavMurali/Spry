@@ -23,7 +23,7 @@ type Bus struct {
 
 // randomized constructor for simulation purposes
 func (b *Bus) Set() {
-	randRoutes := []string{"201R", "500KC", "210A"}
+	randRoutes := []string{"201R", "500KC", "210A", "500 KR"}
 	places := readPlaces().Places
 	routes := readRoutes().Routes
 	b.RouteName = randRoutes[rand.Intn(len(randRoutes))]

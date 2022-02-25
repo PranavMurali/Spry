@@ -2,6 +2,8 @@ import random
 from bs4 import BeautifulSoup as Soup
 import requests
 import json
+import urllib.parse
+
 
 class Route():
     routeName = None
@@ -50,17 +52,23 @@ for i in range(0, len(routes), 4):
     if routes[i+3].text == 'Adugodi, Krupanidhi college, Madiwala, Bommanahalli':
         break
 
-json_string = json.dumps({"routes": [ob.__dict__ for ob in temp_routes]})
-f = open("routes.json", "w")
-f.write(json_string)
-f.close()
+# json_string = json.dumps({"routes": [ob.__dict__ for ob in temp_routes]})
+# f = open("routes.json", "w")
+# f.write(json_string)
+# f.close()
 
 placesList = []
 
 for place in places:
-    placesList.append(Place(place, random.uniform(12.0, 12.5), random.uniform(77.0, 78.0)))
+    address = place + ', Bangalore'
+    url = 'https://nominatim.openstreetmap.org/search/' + urllib.parse.quote(address) +'?format=json'
+    response = requests.get(url).json()
+    try:
+        placesList.append(Place(place, float(response[0]["lat"]), float(response[0]["lon"])))
+    except:
+        placesList.append(Place(place, random.uniform(12.0, 12.5), random.uniform(77.0, 78.0)))
 
-# json_string = json.dumps({"places": [ob.__dict__ for ob in placesList]})
-# f = open("places.json", "w")
-# f.write(json_string)
-# f.close()
+json_string = json.dumps({"places": [ob.__dict__ for ob in placesList]})
+f = open("places.json", "w")
+f.write(json_string)
+f.close()

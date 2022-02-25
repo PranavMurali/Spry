@@ -42,7 +42,6 @@ func GetBuses(c *gin.Context) {
 	var dist Distance
 	shortestRoute := getShortestRoute(getClosestArea(sourceLat, sourceLng), dest)
 	filteredBusses := getBuses(shortestRoute.RawRoute, shortestRoute.ForwardFlag, getClosestArea(sourceLat, sourceLng))
-
 	if sort == "capacity" {
 		slice.Sort(filteredBusses[:], func(i, j int) bool {
 			return filteredBusses[i].CurrentCapacity < filteredBusses[j].CurrentCapacity
@@ -77,5 +76,5 @@ func main() {
 	router.GET("/readdistance", ReadDistance)
 	router.GET("/getbuses", GetBuses)
 
-	router.Run()
+	router.Run("localhost:8080")
 }
