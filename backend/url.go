@@ -39,6 +39,5 @@ func (u *Url) SetLatLng(sourceLat float64, sourceLng float64, destLat float64, d
 	u.DestLng = fmt.Sprintf("%f", destLng)
 	u.Prefix = "https://maps.googleapis.com/maps/api/distancematrix/json?"
 	u.Transit_mode = "&transit_mode=bus"
-	fmt.Println(u.URL)
 	u.URL = u.Prefix + "origins=" + u.SrcLat + "," + u.SrcLng + "&destinations=" + u.DestLat + "," + u.DestLng + "&key=" + os.Getenv("API_KEY")
 }
