@@ -143,7 +143,7 @@ func getShortestRoute(source string, dest string) ShortestRoute {
 
 func getBuses(R Route, ForwardFlag bool, source string) []Bus {
 	var buses []Bus
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 20; i++ {
 		var bus Bus
 		bus.Set()
 		buses = append(buses, bus)

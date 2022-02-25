@@ -119,6 +119,16 @@ const MapScreen = () => {
         })();
     }, []);
 
+    const getBuses = (s) => {
+        setDestination(s);
+        url = `https://speeeeeeeed.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${destination}&sort=price`
+        console.log(url);
+        axios.get(url).then((res) => {
+            console.log(res.data);
+        });
+    };
+
+
     return (
         <>
             <View style={styles.container}>
@@ -202,14 +212,7 @@ const MapScreen = () => {
                             style={tw`flex-row mt-3`}
                             underlayColor="black"
                             onPress={() => {
-                                setDestination(stop.name);
-                                axios
-                                    .get(
-                                        `https://speeeeeeeed.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${destination}%20layout&sort=price`
-                                    )
-                                    .then((res) => {
-                                        console.log(res.data);
-                                    });
+                                getBuses(stop.name);
                             }}
                         >
                             <View>
