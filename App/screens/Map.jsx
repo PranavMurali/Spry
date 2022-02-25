@@ -16,6 +16,7 @@ import { useNavigation } from "@react-navigation/core";
 import MapModal from "../components/MapModal";
 import stops from "../stops.json";
 import { ScrollView } from "react-native-gesture-handler";
+import axios from "axios";
 
 const styles = StyleSheet.create({
     container: {
@@ -107,6 +108,14 @@ const MapScreen = () => {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
+            axios
+                .post("https://location.free.beeceptor.com/locations", {
+                    latitude: location.coords.latitude,
+                    longitude: location.coords.longitude,
+                })
+                .then((res) => {
+                    console.log(res.data);
+                });
             setMarkers(markersInit);
         })();
     }, []);
