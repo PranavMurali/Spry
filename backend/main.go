@@ -77,5 +77,5 @@ func main() {
 	router.GET("/readdistance", ReadDistance)
 	router.GET("/getbuses", GetBuses)
 
-	router.Run("localhost:8080")
+	router.Run()
 }
