@@ -1,12 +1,24 @@
-import React from 'react'
-import { View , Text} from "react-native";
+import React from "react";
+import { View, Text, TouchableHighlight } from "react-native";
+import { getAuth } from "firebase/auth";
 import tw from "tailwind-react-native-classnames";
-const AuthTest = () => {
-  return (
-    <View style={tw`top-10 left-10`}>
-        <Text>AuthTest</Text>
-    </View>
-  )
-}
+// import { StateProvider } from "../StateProvider";
+// import reducer, { initialState } from "../reducer";
 
-export default AuthTest
+// const provider = new GoogleAuthProvider();
+const auth = getAuth();
+auth.useDeviceLanguage();
+
+const AuthTest = () => {
+    return (
+        <>
+            <View style={tw`top-10 left-10`}>
+                <TouchableHighlight onPress={() => {}}>
+                    <Text>Google sign in</Text>
+                </TouchableHighlight>
+            </View>
+        </>
+    );
+};
+
+export default AuthTest;
