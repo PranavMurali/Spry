@@ -15,6 +15,10 @@ import Fleet from "./screens/Fleet";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore'
 
+import reducer, { initialState } from './reducer';
+import {StateProvider} from "./StateProvider"
+import { useStateValue } from "../StateProvider";
+
 export default function App() {
     useKeepAwake();
 
@@ -42,6 +46,7 @@ export default function App() {
         });
     })
     return (
+        <StateProvider initialState={initialState} reducer={reducer}>
         <NavigationContainer>
             <SafeAreaProvider>
                 <KeyboardAvoidingView
@@ -89,5 +94,6 @@ export default function App() {
                 </KeyboardAvoidingView>
             </SafeAreaProvider>
         </NavigationContainer>
+        </StateProvider>
     );
 }
