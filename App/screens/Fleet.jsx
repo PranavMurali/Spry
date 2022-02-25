@@ -119,11 +119,19 @@ const Fleet = () => {
                                     >
                                         {u.routeNo}
                                     </Text>
-                                    <Text
-                                        style={tw`mt-2 bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded`}
+                                    {u.status === "Available" ? (
+                                            <Text
+                                            style={tw`mt-2 bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded`}
+                                        >
+                                            {u.status}
+                                        </Text>): (
+                                        <Text
+                                        style={tw`mt-2 bg-red-300 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded`}
                                     >
                                         {u.status}
                                     </Text>
+                                    )}
+                                    
                                 </View>
                                 <View style={tw`flex-row content-end`}>
                                     <Icon

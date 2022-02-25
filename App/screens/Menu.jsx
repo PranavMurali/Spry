@@ -41,6 +41,12 @@ const Menu = () => {
         title="Timeline"
         onPress={() => navigation.navigate('Timeline')}
         />
+        {/* Testing */}
+        <SpeedDial.Action
+        icon={{ name:'calendar',color:"#fff" ,type:'antdesign' }}
+        title="AuthTest"
+        onPress={() => navigation.navigate('AuthTest')}
+        />
 
       </SpeedDial>
 
