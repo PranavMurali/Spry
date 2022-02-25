@@ -74,11 +74,10 @@ func GetBuses(c *gin.Context) {
 	}
 
 	if sort == "distance" {
-		fmt.Print("stedi")
 		for _, bus := range filteredBusses {
 			distance := GetDistanceLatLong(source, bus.Lat, bus.Lng)
 			json.Unmarshal(distance, &dist)
-			fmt.Println(dist)
+			fmt.Println("distance", dist)
 			bus.DistanceFromUser, _ = strconv.ParseFloat(dist.Rows[0].Elements[0].Distance.Text, 64)
 
 		}
