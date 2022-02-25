@@ -108,17 +108,26 @@ const MapScreen = () => {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
-            axios
-                .post("https://location.free.beeceptor.com/locations", {
-                    latitude: location.coords.latitude,
-                    longitude: location.coords.longitude,
-                })
-                .then((res) => {
-                    console.log(res.data);
-                });
+            // axios
+            //     .get(
+            //         `https://speeeeeeeed.herokuapp.com/getbuses?sourcelat=12.106057772057357&sourcelng=77.89600158139491&dest=Chandra%20layout&sort=distance`
+            //     )
+            //     .then((res) => {
+            //         console.log(res.data);
+            //     });
             setMarkers(markersInit);
         })();
     }, []);
+
+    const getBuses = (s) => {
+        setDestination(s);
+        url = `https://speeeeeeeed.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${destination}&sort=price`
+        console.log(url);
+        axios.get(url).then((res) => {
+            console.log(res.data);
+        });
+    };
+
 
     return (
         <>
@@ -202,7 +211,9 @@ const MapScreen = () => {
                             key={index}
                             style={tw`flex-row mt-3`}
                             underlayColor="black"
-                            onPress={() => setDestination(stop.name)}
+                            onPress={() => {
+                                getBuses(stop.name);
+                            }}
                         >
                             <View>
                                 <Text style={tw`font-black mt-2 mx-3 w-80`}>

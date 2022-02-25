@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -40,6 +41,7 @@ func GetBuses(c *gin.Context) {
 	dest := c.Query("dest")
 	sort := c.Query("sort")
 	var dist Distance
+	fmt.Println(getClosestArea(sourceLat, sourceLng))
 	shortestRoute := getShortestRoute(getClosestArea(sourceLat, sourceLng), dest)
 	filteredBusses := getBuses(shortestRoute.RawRoute, shortestRoute.ForwardFlag, getClosestArea(sourceLat, sourceLng))
 	if sort == "capacity" {
