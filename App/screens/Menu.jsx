@@ -1,13 +1,21 @@
-import React from 'react'
+import React ,{useState,useEffect}from 'react'
 import { StyleSheet, Text, View, Dimensions,TouchableOpacity,TouchableHighlight} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 import { useNavigation} from '@react-navigation/core';
-import { SpeedDial } from 'react-native-elements';
+import { SpeedDial, Switch} from 'react-native-elements';
+import { useStateValue } from "../StateProvider";
 
 const Menu = () => {
     const navigation = useNavigation();
     const [open, setOpen] = React.useState(false);
+    const [checked, setChecked] = useState(false);
+    const [{ admin }, dispatch] = useStateValue();
+    useEffect(() => {
+      dispatch({
+        type: "SET_ADMIN",
+        payload: checked,
+    })}, [checked]);
   return (
       <>
     <View>
@@ -17,6 +25,13 @@ const Menu = () => {
             <Icon name='arrowleft' color="black" type='antdesign' />
         </TouchableHighlight>
     </View>
+    <Switch
+        style={tw`bg-gray-100 absolute top-20 left-3`}
+        value={checked}
+        onValueChange={(val)=>setChecked(val)}
+      />
+    {admin ? ( 
+    <>
         <SpeedDial
         isOpen={open}
         icon={{name: 'devices-other', color: '#fff', type:'material'}}
@@ -41,14 +56,11 @@ const Menu = () => {
         title="Timeline"
         onPress={() => navigation.navigate('Timeline')}
         />
-        {/* Testing */}
-        <SpeedDial.Action
-        icon={{ name:'calendar',color:"#fff" ,type:'antdesign' }}
-        title="AuthTest"
-        onPress={() => navigation.navigate('AuthTest')}
-        />
 
-      </SpeedDial>
+      </SpeedDial> 
+      </>):
+      <Text style={tw`top-20 left-4`}>Admin</Text>}
+   
 
     </>
   )

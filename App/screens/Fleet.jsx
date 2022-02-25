@@ -20,25 +20,25 @@ const Fleet = () => {
     const [open, setOpen] = React.useState(false);
     const buses = [
         {
-            regNo: "TN10AS1234",
+            regNo: "KA01AS1234",
             routeNo: "1",
             capacity: "50",
             status: "Available",
         },
         {
-            regNo: "TN10AS1235",
+            regNo: "KA01AS1235",
             routeNo: "2",
             capacity: "50",
             status: "Available",
         },
         {
-            regNo: "TN10AS1236",
+            regNo: "KA01AS1236",
             routeNo: "3",
             capacity: "50",
             status: "Available",
         },
         {
-            regNo: "TN10AS1237",
+            regNo: "KA01AS1237",
             routeNo: "4",
             capacity: "50",
             status: "Not Available",
