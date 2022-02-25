@@ -75,7 +75,6 @@ func GetDistance(origin string, destination string) []byte {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(body)
 	return body
 }
 
@@ -100,7 +99,6 @@ func GetDistanceLatLong(sourceLat float64, sourceLng float64, destinationLat flo
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(body)
 	return body
 }
 
@@ -193,11 +191,9 @@ func getClosestArea(inpLat float64, inpLng float64) string {
 }
 
 func MakeProperApi(apiDistance string) float64 {
-	// remove last 2 characters and whitespace
 	apiDistance = apiDistance[:len(apiDistance)-2]
 	apiDistance = strings.TrimSpace(apiDistance)
 	apiDistance = strings.Replace(apiDistance, " ", "", -1)
 	dist, _ := strconv.ParseFloat(apiDistance, 64)
-	fmt.Println("STEDI", dist)
 	return dist
 }
