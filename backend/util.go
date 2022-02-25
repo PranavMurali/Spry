@@ -8,6 +8,8 @@ import (
 	"math"
 	"math/rand"
 	"net/http"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -73,13 +75,13 @@ func GetDistance(origin string, destination string) []byte {
 	if err != nil {
 		fmt.Println(err)
 	}
-
+	fmt.Println(body)
 	return body
 }
 
-func GetDistanceLatLong(origin string, destinationLat float64, destinationLong float64) []byte {
+func GetDistanceLatLong(sourceLat float64, sourceLng float64, destinationLat float64, destinationLong float64) []byte {
 	var url Url
-	url.SetLatLng(origin, destinationLat, destinationLong)
+	url.SetLatLng(sourceLat, sourceLng, destinationLat, destinationLong)
 	method := "GET"
 
 	client := &http.Client{}
@@ -98,6 +100,7 @@ func GetDistanceLatLong(origin string, destinationLat float64, destinationLong f
 	if err != nil {
 		fmt.Println(err)
 	}
+	fmt.Println(body)
 	return body
 }
 
@@ -172,4 +175,29 @@ func getBuses(R Route, ForwardFlag bool, source string) []Bus {
 		}
 	}
 	return filteredBuses
+}
+
+// gets the closest area(place) given coordinates (latitude, longitude)
+func getClosestArea(inpLat float64, inpLng float64) string {
+	places := readPlaces()
+	minDist := 100.00
+	var closestPlace Place
+	for _, place := range places.Places {
+		dist := EucDist(inpLat, inpLng, place.Lat, place.Lng)
+		if dist < float64(minDist) {
+			minDist = dist
+			closestPlace = place
+		}
+	}
+	return closestPlace.Name
+}
+
+func MakeProperApi(apiDistance string) float64 {
+	// remove last 2 characters and whitespace
+	apiDistance = apiDistance[:len(apiDistance)-2]
+	apiDistance = strings.TrimSpace(apiDistance)
+	apiDistance = strings.Replace(apiDistance, " ", "", -1)
+	dist, _ := strconv.ParseFloat(apiDistance, 64)
+	fmt.Println("STEDI", dist)
+	return dist
 }

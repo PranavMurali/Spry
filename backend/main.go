@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -18,23 +17,6 @@ func getPlaces(c *gin.Context) {
 // returns routes as json (endpoint)
 func getRoutes(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, readRoutes().Routes)
-}
-
-// gets the closest area(place) given coordinates (latitude, longitude)
-func getClosestArea(c *gin.Context) {
-	inpLat, _ := strconv.ParseFloat(c.Query("lat"), 64)
-	inpLng, _ := strconv.ParseFloat(c.Query("lng"), 64)
-	places := readPlaces()
-	minDist := 100.00
-	var closestPlace Place
-	for _, place := range places.Places {
-		dist := EucDist(inpLat, inpLng, place.Lat, place.Lng)
-		if dist < float64(minDist) {
-			minDist = dist
-			closestPlace = place
-		}
-	}
-	c.IndentedJSON(http.StatusOK, closestPlace)
 }
 
 // generates a randomized bus instance for testing/simulation
@@ -53,13 +35,13 @@ func ReadDistance(c *gin.Context) {
 }
 
 func GetBuses(c *gin.Context) {
-
-	source := c.Query("source")
+	sourceLat, _ := strconv.ParseFloat(c.Query("sourcelat"), 64)
+	sourceLng, _ := strconv.ParseFloat(c.Query("sourcelng"), 64)
 	dest := c.Query("dest")
 	sort := c.Query("sort")
 	var dist Distance
-	shortestRoute := getShortestRoute(source, dest)
-	filteredBusses := getBuses(shortestRoute.RawRoute, shortestRoute.ForwardFlag, source)
+	shortestRoute := getShortestRoute(getClosestArea(sourceLat, sourceLng), dest)
+	filteredBusses := getBuses(shortestRoute.RawRoute, shortestRoute.ForwardFlag, getClosestArea(sourceLat, sourceLng))
 
 	if sort == "capacity" {
 		slice.Sort(filteredBusses[:], func(i, j int) bool {
@@ -74,12 +56,10 @@ func GetBuses(c *gin.Context) {
 	}
 
 	if sort == "distance" {
-		for _, bus := range filteredBusses {
-			distance := GetDistanceLatLong(source, bus.Lat, bus.Lng)
+		for i, _ := range filteredBusses {
+			distance := GetDistanceLatLong(sourceLat, sourceLng, filteredBusses[i].Lat, filteredBusses[i].Lng)
 			json.Unmarshal(distance, &dist)
-			fmt.Println("distance", dist)
-			bus.DistanceFromUser, _ = strconv.ParseFloat(dist.Rows[0].Elements[0].Distance.Text, 64)
-
+			filteredBusses[i].DistanceFromUser = MakeProperApi(dist.Rows[0].Elements[0].Distance.Text)
 		}
 		slice.Sort(filteredBusses[:], func(i, j int) bool {
 			return filteredBusses[i].DistanceFromUser < filteredBusses[j].DistanceFromUser
@@ -93,7 +73,6 @@ func main() {
 	router := gin.Default()
 	router.GET("/places", getPlaces)
 	router.GET("/routes", getRoutes)
-	router.POST("/closestarea", getClosestArea)
 	router.GET("/getbusDetails", getBusDetails)
 	router.GET("/readdistance", ReadDistance)
 	router.GET("/getbuses", GetBuses)
