@@ -85,6 +85,7 @@ const MapScreen = () => {
             longitudeDelta: 0.0421,
         },
     });
+    const [buses, setBuses] = useState([]);
     const [errorMsg, setErrorMsg] = useState(null);
     const [destination, onChangeDestination] = useState("");
 
@@ -120,11 +121,15 @@ const MapScreen = () => {
     }, []);
 
     const getBuses = (s) => {
+        console.log("Bus stop ",s)
         setDestination(s);
-        url = `https://speeeeeeeed.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${destination}&sort=price`
+        s = s.replace(" ", "%20");
+        console.log("After replacing ",s)
+        url = `https://speeeeeeeed.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${s}&sort=price`
         console.log(url);
         axios.get(url).then((res) => {
             console.log(res.data);
+            setBuses(res.data);
         });
     };
 
@@ -178,6 +183,20 @@ const MapScreen = () => {
                             icon={require("../assets/bus-stop.png")}
                         />
                     ))}
+
+                    {buses.map((bus, index) => (
+                        <Marker
+                            key={index + "_" + Date.now()}
+                            title={bus.RouteName}
+                            coordinate={{
+                                latitude: bus.Lat,
+                                longitude: bus.Lng,
+                            }}
+                            icon={require("../assets/moving-bus.png")}
+                        />
+                    ))}
+
+
                 </MapView>
             </View>
             <TouchableHighlight
