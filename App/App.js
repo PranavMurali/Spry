@@ -17,7 +17,6 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 import reducer, { initialState } from "./reducer";
 import { StateProvider } from "./StateProvider";
-import { useStateValue } from "./StateProvider";
 
 export default function App() {
     useKeepAwake();
