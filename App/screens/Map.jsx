@@ -5,9 +5,10 @@ import {
     TextInput,
     View,
     Dimensions,
-    TouchableOpacity,
     TouchableHighlight,
+    Alert,
 } from "react-native";
+import { setJSExceptionHandler } from "react-native-exception-handler";
 import MapView, { MAP_TYPES, Marker } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
@@ -15,6 +16,7 @@ import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/core";
 import MapModal from "../components/MapModal";
 import stops from "../stops.json";
+import { ErrorBoundary } from "../components/ErrorBoundary";
 import { ScrollView } from "react-native-gesture-handler";
 import axios from "axios";
 
@@ -50,6 +52,21 @@ const styles = StyleSheet.create({
         padding: 10,
     },
 
+    button: {
+        backgroundColor: "#dbdbdb",
+        padding: 0,
+        borderRadius: 40,
+        width: "30%",
+        height: 30,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    buttonText: {
+        color: "black",
+        padding: 0,
+        fontSize: 15,
+    },
+
     stops: {
         flex: 1,
         alignItems: "stretch",
@@ -59,6 +76,7 @@ const styles = StyleSheet.create({
 const MapScreen = () => {
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
+    const [pref, setPref] = useState("distance");
     const markersInit = [
         {
             title: "Mayo Hall Manipal Hospital",
@@ -89,6 +107,17 @@ const MapScreen = () => {
     const [errorMsg, setErrorMsg] = useState(null);
     const [destination, onChangeDestination] = useState("");
 
+    const exceptionhandler = (exceptionString) => {
+        Alert.alert("Oops", "Something went wrong. Please try again later.", [
+            { text: "OK", onPress: () => navigation.navigate("Menu") },
+        ]);
+    };
+    setJSExceptionHandler((error, isFatal) => {
+        Alert.alert("Oops", "Something went wrong. Please try again later.", [
+            { text: "OK", onPress: () => navigation.navigate("Menu") },
+        ]);
+    });
+
     let filteredData = stops.places.filter((item) => {
         return (
             item.name.toLowerCase().indexOf(destination.toLowerCase()) !== -1
@@ -109,30 +138,22 @@ const MapScreen = () => {
 
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location);
-            // axios
-            //     .get(
-            //         `https://speeeeeeeed.herokuapp.com/getbuses?sourcelat=12.106057772057357&sourcelng=77.89600158139491&dest=Chandra%20layout&sort=distance`
-            //     )
-            //     .then((res) => {
-            //         console.log(res.data);
-            //     });
             setMarkers(markersInit);
         })();
     }, []);
 
     const getBuses = (s) => {
-        console.log("Bus stop ",s)
+        console.log("Bus stop ", s);
         setDestination(s);
         s = s.replace(" ", "%20");
-        console.log("After replacing ",s)
-        url = `https://speeeeeeeed.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${s}&sort=price`
+        console.log("After replacing ", s);
+        var url = `https://speeeeeeeeds.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${s}&sort=${pref}`;
         console.log(url);
         axios.get(url).then((res) => {
             console.log(res.data);
             setBuses(res.data);
         });
     };
-
 
     return (
         <>
@@ -167,36 +188,41 @@ const MapScreen = () => {
                     provider="google"
                     annotations={markersInit}
                 >
-                    {/* <UrlTile
+                    <ErrorBoundary>
+                        {/* <UrlTile
                         urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
                         maximumZ={19}
 
                     /> */}
-                    {markers.map((marker, index) => (
-                        <Marker
-                            key={index + "_" + Date.now()}
-                            title={marker.title}
-                            coordinate={{
-                                latitude: marker.latitude,
-                                longitude: marker.longitude,
-                            }}
-                            icon={require("../assets/bus-stop.png")}
-                        />
-                    ))}
-
-                    {buses.map((bus, index) => (
-                        <Marker
-                            key={index + "_" + Date.now()}
-                            title={bus.RouteName}
-                            coordinate={{
-                                latitude: bus.Lat,
-                                longitude: bus.Lng,
-                            }}
-                            icon={require("../assets/moving-bus.png")}
-                        />
-                    ))}
-
-
+                        {markers
+                            ? markers.map((marker, index) => (
+                                  <Marker
+                                      key={index + "_" + Date.now()}
+                                      title={marker.title}
+                                      coordinate={{
+                                          latitude: marker.latitude,
+                                          longitude: marker.longitude,
+                                      }}
+                                      icon={require("../assets/bus-stop.png")}
+                                  />
+                              ))
+                            : () => null}
+                    </ErrorBoundary>
+                    <ErrorBoundary>
+                        {buses
+                            ? buses.map((bus, index) => (
+                                  <Marker
+                                      key={index + "_" + Date.now()}
+                                      title={bus.RouteName}
+                                      coordinate={{
+                                          latitude: bus.Lat,
+                                          longitude: bus.Lng,
+                                      }}
+                                      icon={require("../assets/moving-bus.png")}
+                                  />
+                              ))
+                            : () => null}
+                    </ErrorBoundary>
                 </MapView>
             </View>
             <TouchableHighlight
@@ -223,10 +249,46 @@ const MapScreen = () => {
                     returnKeyType="search"
                     onSubmitEditing={() => setDestination(filteredData[0].name)}
                 />
-                <Text>{destination}</Text>
+                <View
+                    style={{
+                        flex: 1,
+                        flexDirection: "row",
+                        justifyContent: "space-evenly",
+                        height: "20%",
+                        width: "100%",
+                        marginBottom: 30,
+                    }}
+                >
+                    <TouchableHighlight
+                        style={styles.button}
+                        onPress={() => {
+                            setPref("price");
+                        }}
+                    >
+                        <View>
+                            <Text style={styles.buttonText}>Price</Text>
+                        </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+                        onPress={() => {
+                            setPref("distance");
+                        }}
+                    >
+                        <Text style={styles.buttonText}>Distance</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+                        onPress={() => {
+                            setPref("capacity");
+                        }}
+                    >
+                        <Text style={styles.buttonText}>Capacity</Text>
+                    </TouchableHighlight>
+                </View>
                 <ScrollView>
                     {filteredData.map((stop, index) => (
-                        <TouchableOpacity
+                        <TouchableHighlight
                             key={index}
                             style={tw`flex-row mt-3`}
                             underlayColor="black"
@@ -239,7 +301,7 @@ const MapScreen = () => {
                                     {stop.name}
                                 </Text>
                             </View>
-                        </TouchableOpacity>
+                        </TouchableHighlight>
                     ))}
                 </ScrollView>
             </MapModal>

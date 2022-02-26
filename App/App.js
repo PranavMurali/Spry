@@ -1,7 +1,6 @@
 import React from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
@@ -46,53 +45,53 @@ export default function App() {
     });
     return (
         <StateProvider initialState={initialState} reducer={reducer}>
-        <NavigationContainer>
-            <SafeAreaProvider>
-                <KeyboardAvoidingView
-                    style={tw`flex-1`}
-                    behavior={Platform.OS === "ios" ? "padding" : "height"}
-                    keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
-                >
-                    <Stack.Navigator initialRouteName="Map">
-                        <Stack.Screen
-                            name="Map"
-                            component={MapScreen}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                        <Stack.Screen
-                            name="Menu"
-                            component={Menu}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                        <Stack.Screen
-                            name="Timeline"
-                            component={Timeline}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                         <Stack.Screen
-                            name="Admin"
-                            component={Admin}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                        <Stack.Screen
-                            name="Fleet"
-                            component={Fleet}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                    </Stack.Navigator>
-                </KeyboardAvoidingView>
-            </SafeAreaProvider>
-        </NavigationContainer>
-    </StateProvider>
+            <NavigationContainer>
+                <SafeAreaProvider>
+                    <KeyboardAvoidingView
+                        style={tw`flex-1`}
+                        behavior={Platform.OS === "ios" ? "padding" : "height"}
+                        keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
+                    >
+                        <Stack.Navigator initialRouteName="Map">
+                            <Stack.Screen
+                                name="Map"
+                                component={MapScreen}
+                                options={{
+                                    headerShown: false,
+                                }}
+                            />
+                            <Stack.Screen
+                                name="Menu"
+                                component={Menu}
+                                options={{
+                                    headerShown: false,
+                                }}
+                            />
+                            <Stack.Screen
+                                name="Timeline"
+                                component={Timeline}
+                                options={{
+                                    headerShown: false,
+                                }}
+                            />
+                            <Stack.Screen
+                                name="Admin"
+                                component={Admin}
+                                options={{
+                                    headerShown: false,
+                                }}
+                            />
+                            <Stack.Screen
+                                name="Fleet"
+                                component={Fleet}
+                                options={{
+                                    headerShown: false,
+                                }}
+                            />
+                        </Stack.Navigator>
+                    </KeyboardAvoidingView>
+                </SafeAreaProvider>
+            </NavigationContainer>
+        </StateProvider>
     );
 }
