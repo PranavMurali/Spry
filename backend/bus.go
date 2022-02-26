@@ -3,6 +3,7 @@ package main
 import (
 	"math/rand"
 	"time"
+	"strconv"
 )
 
 // defines a singular bus that is part of the BMTC
@@ -23,12 +24,12 @@ type Bus struct {
 
 // randomized constructor for simulation purposes
 func (b *Bus) Set() {
-	randRoutes := []string{"201R", "500KC", "210A", "500 KR"}
+	randRoutes := []string{"201R",  "500KC", "210A", "500 KR"}
 	places := readPlaces().Places
 	routes := readRoutes().Routes
 	b.RouteName = randRoutes[rand.Intn(len(randRoutes))]
 	b.FullCapacity = 50
-	b.BusId = "KN" + rand.Intn(100).String()
+	b.BusId = "KN" + strconv.Itoa(rand.Intn(100))
 	b.CurrentCapacity = int32(rand.Intn(int(b.FullCapacity)))
 	b.Price = float64(rand.Intn(100))
 	for _, route := range routes {
