@@ -66,7 +66,7 @@ for place in places:
     try:
         placesList.append(Place(place, float(response[0]["lat"]), float(response[0]["lon"])))
     except:
-        placesList.append(Place(place, random.uniform(12.0, 12.5), random.uniform(77.0, 78.0)))
+        placesList.append(Place(place, 0, 0))
 
 json_string = json.dumps({"places": [ob.__dict__ for ob in placesList]})
 f = open("places.json", "w")
