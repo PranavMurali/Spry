@@ -21,7 +21,6 @@ import { ErrorBoundary } from "../components/ErrorBoundary";
 import { ScrollView } from "react-native-gesture-handler";
 import axios from "axios";
 import { useStateValue ,dispatch} from "../StateProvider";
-import Bus from "./Bus";
 
 const styles = StyleSheet.create({
     container: {
@@ -160,6 +159,11 @@ const MapScreen = () => {
             setBuses(res.data);
         });
         setToggle(false);
+    };
+
+    const pointBuses = () => {
+        setModalVisible(false);
+        // zoom in on the map to see the buses
     };
     return (
         <>
@@ -318,7 +322,7 @@ const MapScreen = () => {
                 <ScrollView>
                 {buses.map(bus => {
                     return (
-                    <TouchableOpacity style={tw` mx-10 mt-2 rounded p-2 shadow-lg bg-gray-900`} onPress={()=>alert(bus.RouteNo)} key={bus.BusId}>
+                    <TouchableOpacity style={tw` mx-10 mt-2 rounded p-2 shadow-lg bg-gray-900`} onPress={()=>pointBuses(buses)} key={bus.BusId}>
                         <View style={tw`flex-row`}>
                         <Icon name='bus' color="white" type='font-awesome' />
                         <Text style={tw`ml-4 text-white font-bold text-xl`}>{bus.BusId}</Text>
