@@ -12,27 +12,30 @@ type Bus struct {
 	FullCapacity         int32
 	CurrentCapacity      int32
 	MaintenanceRemaining int32
-	BusStop              string
+	StopCrossed          string
 	Lat                  float64
 	Lng                  float64
 	StartTime            time.Time
-	ToFinalStop          bool
+	ForwardFlag          bool
+	Price                float64
+	DistanceFromUser     float64
 }
 
 // randomized constructor for simulation purposes
 func (b *Bus) Set() {
-	randRoutes := []string{"195", "276", "365"}
+	randRoutes := []string{"201R", "500KC", "210A", "500 KR"}
 	places := readPlaces().Places
 	routes := readRoutes().Routes
-	b.RouteName = randRoutes[rand.Intn(len(randRoutes)-1)]
+	b.RouteName = randRoutes[rand.Intn(len(randRoutes))]
 	b.FullCapacity = 50
 	b.BusId = "KN2304"
 	b.CurrentCapacity = int32(rand.Intn(int(b.FullCapacity)))
+	b.Price = float64(rand.Intn(100))
 	for _, route := range routes {
 		if b.RouteName == route.RouteName {
-			b.BusStop = route.Places[rand.Intn(len(route.Places)-1)]
+			b.StopCrossed = route.Places[rand.Intn(len(route.Places)-1)]
 			for _, place := range places {
-				if b.BusStop == place.Name {
+				if b.StopCrossed == place.Name {
 					b.Lat = place.Lat
 					b.Lng = place.Lng
 					break
@@ -42,6 +45,6 @@ func (b *Bus) Set() {
 		}
 	}
 	flags := []bool{true, false}
-	b.ToFinalStop = flags[rand.Intn(2)]
+	b.ForwardFlag = flags[rand.Intn(2)]
 	b.StartTime = Randate()
 }
