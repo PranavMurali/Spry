@@ -28,7 +28,7 @@ func (b *Bus) Set() {
 	routes := readRoutes().Routes
 	b.RouteName = randRoutes[rand.Intn(len(randRoutes))]
 	b.FullCapacity = 50
-	b.BusId = "KN2304"
+	b.BusId = "KN" + rand.Intn(100).String()
 	b.CurrentCapacity = int32(rand.Intn(int(b.FullCapacity)))
 	b.Price = float64(rand.Intn(100))
 	for _, route := range routes {

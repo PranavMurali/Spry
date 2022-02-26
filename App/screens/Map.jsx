@@ -7,6 +7,7 @@ import {
     Dimensions,
     TouchableHighlight,
     Alert,
+    TouchableOpacity,
 } from "react-native";
 import { setJSExceptionHandler } from "react-native-exception-handler";
 import MapView, { MAP_TYPES, Marker } from "react-native-maps";
@@ -19,6 +20,8 @@ import stops from "../stops.json";
 import { ErrorBoundary } from "../components/ErrorBoundary";
 import { ScrollView } from "react-native-gesture-handler";
 import axios from "axios";
+import { useStateValue ,dispatch} from "../StateProvider";
+import Bus from "./Bus";
 
 const styles = StyleSheet.create({
     container: {
@@ -77,6 +80,8 @@ const MapScreen = () => {
     const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
     const [pref, setPref] = useState("distance");
+    const [toggle, setToggle] = useState(true);
+
     const markersInit = [
         {
             title: "Mayo Hall Manipal Hospital",
@@ -142,6 +147,7 @@ const MapScreen = () => {
         })();
     }, []);
 
+    
     const getBuses = (s) => {
         console.log("Bus stop ", s);
         setDestination(s);
@@ -150,11 +156,11 @@ const MapScreen = () => {
         var url = `https://speeeeeeeeds.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${s}&sort=${pref}`;
         console.log(url);
         axios.get(url).then((res) => {
-            console.log(res.data);
+            console.log("res",res.data);
             setBuses(res.data);
         });
+        setToggle(false);
     };
-
     return (
         <>
             <View style={styles.container}>
@@ -263,6 +269,8 @@ const MapScreen = () => {
                         style={styles.button}
                         onPress={() => {
                             setPref("price");
+                            getBuses(destination);
+
                         }}
                     >
                         <View>
@@ -273,6 +281,7 @@ const MapScreen = () => {
                         style={styles.button}
                         onPress={() => {
                             setPref("distance");
+                            getBuses(destination);
                         }}
                     >
                         <Text style={styles.buttonText}>Distance</Text>
@@ -281,12 +290,14 @@ const MapScreen = () => {
                         style={styles.button}
                         onPress={() => {
                             setPref("capacity");
+                            getBuses(destination);
                         }}
                     >
                         <Text style={styles.buttonText}>Capacity</Text>
                     </TouchableHighlight>
                 </View>
-                <ScrollView>
+                {toggle ? <ScrollView>
+                    {console.log("toggle", toggle)}
                     {filteredData.map((stop, index) => (
                         <TouchableHighlight
                             key={index}
@@ -303,7 +314,19 @@ const MapScreen = () => {
                             </View>
                         </TouchableHighlight>
                     ))}
-                </ScrollView>
+                </ScrollView> : 
+                <ScrollView>
+                {buses.map(bus => {
+                    return (
+                    <TouchableOpacity style={tw` mx-10 mt-2 rounded p-2 shadow-lg bg-gray-900`} onPress={()=>alert(bus.RouteNo)} key={bus.BusId}>
+                        <View style={tw`flex-row`}>
+                        <Icon name='bus' color="white" type='font-awesome' />
+                        <Text style={tw`ml-4 text-white font-bold text-xl`}>{bus.BusId}</Text>
+                        </View>
+                    </TouchableOpacity>
+                    )
+                })}
+                </ScrollView>}
             </MapModal>
         </>
     );

@@ -16,6 +16,7 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 import reducer, { initialState } from "./reducer";
 import { StateProvider } from "./StateProvider";
+import Bus from "./screens/Bus";
 
 export default function App() {
     useKeepAwake();
@@ -84,6 +85,13 @@ export default function App() {
                             <Stack.Screen
                                 name="Fleet"
                                 component={Fleet}
+                                options={{
+                                    headerShown: false,
+                                }}
+                            />
+                            <Stack.Screen
+                                name="Bus"
+                                component={Bus}
                                 options={{
                                     headerShown: false,
                                 }}

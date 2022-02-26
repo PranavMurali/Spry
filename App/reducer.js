@@ -1,5 +1,6 @@
 export const initialState = {
     admin : false,
+    buses : ['fun'],
 };
 
 const reducer = (state, action) => {
@@ -8,6 +9,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 admin: action.payload,
+            };
+        case 'SET_BUSES':
+            return {
+                ...state,
+                buses: action.payload,
             };
         default:
             return state;
