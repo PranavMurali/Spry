@@ -17,7 +17,6 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 import reducer, { initialState } from "./reducer";
 import { StateProvider } from "./StateProvider";
-import AuthTest from "./screens/AuthTest";
 
 export default function App() {
     useKeepAwake();
@@ -54,7 +53,7 @@ export default function App() {
                         behavior={Platform.OS === "ios" ? "padding" : "height"}
                         keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
                     >
-                        <Stack.Navigator initialRouteName="Menu">
+                        <Stack.Navigator initialRouteName="Map">
                             <Stack.Screen
                                 name="Map"
                                 component={MapScreen}
@@ -86,13 +85,6 @@ export default function App() {
                             <Stack.Screen
                                 name="Fleet"
                                 component={Fleet}
-                                options={{
-                                    headerShown: false,
-                                }}
-                            />
-                            <Stack.Screen
-                                name="Auth"
-                                component={AuthTest}
                                 options={{
                                     headerShown: false,
                                 }}
