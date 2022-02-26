@@ -1,526 +1,362 @@
 {
   "places": [
+    { "name": "Kadabisanahalli", "lat": "12.9360011", "lng": "77.6975854" },
+    { "name": "Banashankari Bus Stand", "lat": 0, "lng": 0 },
     {
-      "name": "Basavewshwaranagar",
-      "lat": 12.425750111631835,
-      "lng": 77.6615639669133
+      "name": "Koramangala water Tank",
+      "lat": "12.9269389",
+      "lng": "77.6226072"
     },
-    {
-      "name": "Majestic (KBS) Wilson Garden Police Station",
-      "lat": 12.485370584812937,
-      "lng": 77.4383846357399
-    },
-    { "name": "HAL Main Gate", "lat": 12.9585125, "lng": 77.6660265 },
-    { "name": "Hosa Road", "lat": 12.8747372, "lng": 77.668964 },
-    {
-      "name": "Jayanagar 9th Block East",
-      "lat": 12.9191456,
-      "lng": 77.5938653
-    },
-    { "name": "Hebbagodi.", "lat": 12.8267016, "lng": 77.6799745 },
-    { "name": "III BTM Layout", "lat": 12.9151772, "lng": 77.6102821 },
-    { "name": "ISRO Layout", "lat": 12.8974283, "lng": 77.5573828 },
-    {
-      "name": "Nagawara Road,Channasandra,KR Puram Rly Station",
-      "lat": 12.138463550570322,
-      "lng": 77.95668623563776
-    },
-    { "name": "PES College", "lat": 12.9350701, "lng": 77.5370613 },
-    { "name": "Jalahalli Cross,", "lat": 13.0400428, "lng": 77.51846 },
-    {
-      "name": "Sathyasai Hospital",
-      "lat": 12.335347062196886,
-      "lng": 77.05482969558837
-    },
-    { "name": "Bangalore Club", "lat": 12.9664242, "lng": 77.5974834 },
-    {
-      "name": "Graphite India Ltd.",
-      "lat": 12.327754440226135,
-      "lng": 77.79590621730948
-    },
-    {
-      "name": "Naryana Hurdalaya",
-      "lat": 12.111039815610178,
-      "lng": 77.30268341358662
-    },
-    {
-      "name": "Kenchenhalli Gate",
-      "lat": 12.062506403403175,
-      "lng": 77.73036967351048
-    },
-    { "name": "Konappana Agrahara", "lat": 12.8528618, "lng": 77.668169 },
-    {
-      "name": "Corporation,Banashankari",
-      "lat": 12.35179824921812,
-      "lng": 77.35891386539069
-    },
-    {
-      "name": "Corporation,HAL Main Gate",
-      "lat": 12.465071166781648,
-      "lng": 77.08381411015999
-    },
-    { "name": "Lalbagh Main Gate", "lat": 12.9537155, "lng": 77.5858442 },
-    {
-      "name": "Corporation,Domlur HAL Main Gate",
-      "lat": 12.224121438215787,
-      "lng": 77.32018440910683
-    },
-    { "name": "Modi Hospital", "lat": 12.9975102, "lng": 77.546099 },
-    { "name": "BEML Complex", "lat": 12.920158, "lng": 77.5204954 },
-    {
-      "name": "Shanti Nagar Bus Station",
-      "lat": 12.954326250000001,
-      "lng": 77.59263475716921
-    },
-    { "name": "Binnamangala", "lat": 12.9839881, "lng": 77.6416769 },
-    {
-      "name": "K.R.Puram Rly.Stn",
-      "lat": 12.282024930361974,
-      "lng": 77.33013227882019
-    },
-    {
-      "name": "Bommanahalli,Agara,Marathahalli Bridge",
-      "lat": 12.047472494660568,
-      "lng": 77.28548682676153
-    },
-    {
-      "name": "Mahalaksmi Layout",
-      "lat": 12.17112494371839,
-      "lng": 77.62632362042267
-    },
-    {
-      "name": "Maharani\u2019s College",
-      "lat": 12.9792324,
-      "lng": 77.58378472740652
-    },
-    { "name": "Hebbala Ring Road", "lat": 12.9199125, "lng": 77.6430145 },
-    { "name": "Nagendra Block,", "lat": 12.942029, "lng": 77.5520036 },
-    {
-      "name": "Hoskere Halli Cross,",
-      "lat": 12.07131253530905,
-      "lng": 77.8700510618302
-    },
-    { "name": "BSK", "lat": 12.8957037, "lng": 77.555019 },
-    {
-      "name": "Electronic City (Infosys)",
-      "lat": 12.8447999,
-      "lng": 77.66323896266928
-    },
-    { "name": "Banasawadi", "lat": 13.0150607, "lng": 77.3649316 },
-    {
-      "name": "Electronic City (Wipro Gate)",
-      "lat": 12.322980379436636,
-      "lng": 77.94288677875306
-    },
-    { "name": "Kadabisanahalli", "lat": 12.9360011, "lng": 77.6975854 },
-    {
-      "name": "Marathalli Bridge",
-      "lat": 12.452837405577087,
-      "lng": 77.8471914040207
-    },
-    { "name": "Malleshwaram", "lat": 13.0027353, "lng": 77.5703253 },
-    {
-      "name": "Kalyanagara Bus Stand",
-      "lat": 12.346552591427137,
-      "lng": 77.26946317722464
-    },
-    { "name": "marathahalli bridge", "lat": 12.9569237, "lng": 77.7011194 },
-    {
-      "name": "Majestic (KBS)",
-      "lat": 12.191718518833305,
-      "lng": 77.62414031165744
-    },
-    { "name": "M.M.Industries", "lat": 12.93051495, "lng": 77.57343052356869 },
-    {
-      "name": "Nagarabavi Circle",
-      "lat": 12.015050542063678,
-      "lng": 77.52799170587659
-    },
-    { "name": "Banashankari", "lat": 12.965283249999999, "lng": 77.59445195 },
-    {
-      "name": "Shivajinagara Bus Station",
-      "lat": 12.35140017785031,
-      "lng": 77.72552249669094
-    },
-    {
-      "name": "Electronic City",
-      "lat": 12.848759900000001,
-      "lng": 77.64825295827616
-    },
-    { "name": "HAL Main Gate,", "lat": 12.9585125, "lng": 77.6660265 },
-    { "name": "Military Accounts", "lat": 12.9655617, "lng": 77.6173316 },
-    { "name": "Jigani", "lat": 12.7852528, "lng": 77.6380931 },
-    { "name": "Marathahalli,", "lat": 12.9552572, "lng": 77.6984163 },
-    { "name": "Kalyana Nagara.", "lat": 12.9676588, "lng": 77.5238617 },
-    { "name": "Cottonpet Hospital", "lat": 12.9678052, "lng": 77.5702672 },
-    { "name": "Mallesh Palya", "lat": 12.9748146, "lng": 77.6703311 },
-    {
-      "name": "Kundala Halli",
-      "lat": 12.103040162073766,
-      "lng": 77.89802643822249
-    },
-    {
-      "name": "K.R.Puram Rly.Stn,Marathhalli Bridge",
-      "lat": 12.12795030347034,
-      "lng": 77.2219960609009
-    },
-    { "name": "Srinagara", "lat": 12.9442619, "lng": 77.5545923 },
-    { "name": "Domlur", "lat": 12.9624669, "lng": 77.6381958 },
-    { "name": "Hosakerehalli Cross", "lat": 12.9326699, "lng": 77.5453184 },
-    {
-      "name": "BTM Layout,Agara,Kundalahalli",
-      "lat": 12.060173917225192,
-      "lng": 77.25196518182281
-    },
-    { "name": "Siddapura", "lat": 12.9542596, "lng": 77.7309743 },
-    { "name": "Anekal", "lat": 12.799122, "lng": 77.68060437921743 },
-    {
-      "name": "Cauvery Bhavan,",
-      "lat": 12.972890199999998,
-      "lng": 77.58263044218306
-    },
-    { "name": "Chandra Layout", "lat": 12.965293, "lng": 77.5181551 },
-    { "name": "K.R.Market", "lat": 12.9608898, "lng": 77.5746822 },
-    { "name": "Koramangala water Tank", "lat": 12.9269389, "lng": 77.6226072 },
-    { "name": "Vidyaranyapura", "lat": 13.0766407, "lng": 77.5577315 },
-    { "name": "Johnson Market", "lat": 12.9641785, "lng": 77.60616060618568 },
-    {
-      "name": "Manipal Hospital",
-      "lat": 12.998229649999999,
-      "lng": 77.69307898403069
-    },
-    { "name": "Corporation", "lat": 12.9685004, "lng": 77.5865073 },
-    {
-      "name": "Swastik ,KR Circle",
-      "lat": 12.180644226409578,
-      "lng": 77.74654120859955
-    },
-    {
-      "name": "Hope Form",
-      "lat": 12.020933208336348,
-      "lng": 77.84574218671723
-    },
-    {
-      "name": "Central Silk Board",
-      "lat": 12.91614375,
-      "lng": 77.62113085110673
-    },
-    {
-      "name": "Vijayangara",
-      "lat": 12.303934767851533,
-      "lng": 77.479114320681
-    },
-    { "name": "Nagarabhavi BDA Complex", "lat": 12.9795534, "lng": 77.5106479 },
-    { "name": "Madiwala", "lat": 12.9212269, "lng": 77.6179508 },
-    { "name": "Bannerghatta", "lat": 12.8403298, "lng": 77.5941657 },
-    {
-      "name": "Kengeri Housing Board QRTS",
-      "lat": 12.164368151548624,
-      "lng": 77.39897196645815
-    },
-    { "name": "Gunjur", "lat": 13.4279345, "lng": 77.5131493 },
-    {
-      "name": "Kalyani Magnum (JP Nagar)",
-      "lat": 12.8993766,
-      "lng": 77.5968829
-    },
-    { "name": "Chikkabanavara", "lat": 13.0828877, "lng": 77.5079901351852 },
-    { "name": "C.V.Raman Nagara", "lat": 12.9856596, "lng": 77.6638971 },
-    { "name": "Attibele", "lat": 12.7782588, "lng": 77.7712834 },
-    {
-      "name": "MRC College,Coles Park,Maruti seva nagar",
-      "lat": 12.148353500311309,
-      "lng": 77.61728567893216
-    },
-    { "name": "Mayo Hall", "lat": 12.973855, "lng": 77.6112422 },
-    {
-      "name": "Central Talkies",
-      "lat": 12.405168519691163,
-      "lng": 77.26496291150441
-    },
-    { "name": "Hoskerehalli Cross", "lat": 12.9339238, "lng": 77.5390368 },
+    { "name": "Chowdeshwari Bus Station", "lat": 0, "lng": 0 },
+    { "name": "Agara", "lat": "13.0386734", "lng": "77.6468085" },
     {
       "name": "Sadashivanagara Police Station",
-      "lat": 13.0149314,
-      "lng": 77.5728595
+      "lat": "13.0149314",
+      "lng": "77.5728595"
     },
-    { "name": "K.R.Circle", "lat": 12.975957, "lng": 77.5871905 },
-    { "name": "Kumaraswamy Layout,", "lat": 12.9081487, "lng": 77.5553179 },
-    { "name": "Sujatha", "lat": 15.3509212, "lng": 75.1341008 },
-    { "name": "Shanthi Nagar", "lat": 12.95825395, "lng": 77.6025706924521 },
-    { "name": "BTM Layout", "lat": 12.9151772, "lng": 77.6102821 },
-    {
-      "name": "BSK 3rd Stg 3rd Phase",
-      "lat": 12.344379090511376,
-      "lng": 77.94763371244635
-    },
-    {
-      "name": "Dasarahalli,Makali",
-      "lat": 12.38961070283023,
-      "lng": 77.85158691295145
-    },
-    {
-      "name": "Koramangala 80Ft Road",
-      "lat": 12.146413877694457,
-      "lng": 77.87815248791006
-    },
-    { "name": "Marathahalli", "lat": 12.9552572, "lng": 77.6984163 },
-    { "name": "HAL Kalyanamantapa", "lat": 12.9546175, "lng": 77.6824023 },
-    { "name": "Nelamangala", "lat": 13.0953024, "lng": 77.3963586 },
-    { "name": "ISKON", "lat": 15.4047443, "lng": 75.07000709770068 },
-    { "name": "Devasandra", "lat": 12.7572271, "lng": 77.6472795 },
-    { "name": "Marathahalli Bridge", "lat": 12.9569237, "lng": 77.7011194 },
-    {
-      "name": "Dell IT Complex ",
-      "lat": 12.096242563075442,
-      "lng": 77.40135447524408
-    },
-    { "name": "Kuvempu Nagar", "lat": 13.07319265, "lng": 77.541713406882 },
-    { "name": "Chandra layout", "lat": 12.965293, "lng": 77.5181551 },
-    { "name": "Agara.", "lat": 13.0386734, "lng": 77.6468085 },
-    { "name": "Chandapura.", "lat": 12.8004439, "lng": 77.7062826 },
-    { "name": "Vijayanagar", "lat": 12.9718886, "lng": 77.54578883887129 },
-    {
-      "name": "Banashankari Bus Stand",
-      "lat": 12.442750762265305,
-      "lng": 77.27100049975917
-    },
-    { "name": "Nanjappa Circle,", "lat": 12.9604441, "lng": 77.6010513 },
-    { "name": "DR.AIT", "lat": 12.9645411, "lng": 77.50608019141791 },
-    {
-      "name": "Mayo Hall,Tippasandra",
-      "lat": 12.261459634642357,
-      "lng": 77.0883881003782
-    },
-    {
-      "name": "Wilson Garden Police Station",
-      "lat": 12.9501904,
-      "lng": 77.59609214223858
-    },
-    {
-      "name": "Marathhahalli Bridge",
-      "lat": 12.319168296083916,
-      "lng": 77.53551227930463
-    },
-    { "name": "Southend Circle", "lat": 12.9366676, "lng": 77.5771236 },
-    {
-      "name": "Electronic City Wipro Gate",
-      "lat": 12.426399161795404,
-      "lng": 77.50248721553784
-    },
-    {
-      "name": "Doddanekunte",
-      "lat": 12.072456648438445,
-      "lng": 77.38217727096313
-    },
-    {
-      "name": "Electronic city Phase II",
-      "lat": 12.8419314,
-      "lng": 77.6754937
-    },
-    { "name": "Vijayanagara", "lat": 12.9709559, "lng": 77.5374044 },
-    {
-      "name": "Electronicity",
-      "lat": 12.058735520605042,
-      "lng": 77.73130914159107
-    },
-    { "name": "Banashankari Stage", "lat": 12.932708, "lng": 77.5462535 },
-    {
-      "name": "Bannerghatta National Park",
-      "lat": 12.53290595,
-      "lng": 77.54619068920488
-    },
-    {
-      "name": "Mahilaseva Samaja",
-      "lat": 12.31162743509201,
-      "lng": 77.89023970828734
-    },
-    { "name": "Attiguppe", "lat": 12.9628474, "lng": 77.5291685 },
-    { "name": "Mekhri Circle", "lat": 13.0144437, "lng": 77.5838814 },
-    { "name": "ITPL", "lat": 12.9876616, "lng": 77.7369153 },
-    {
-      "name": "Jayanagar Bus tand",
-      "lat": 12.207672754717363,
-      "lng": 77.9753222401854
-    },
-    {
-      "name": "Nagarabhavi (BDA Complex)",
-      "lat": 12.9795534,
-      "lng": 77.5106479
-    },
-    {
-      "name": "Kundalahalli Gate,Sri Sri Sathya Sai Hospital.",
-      "lat": 12.401694846771521,
-      "lng": 77.66853691331077
-    },
-    {
-      "name": "Krupanidhi college",
-      "lat": 12.9142111,
-      "lng": 77.72390037335295
-    },
-    { "name": "Chandapura", "lat": 12.8004439, "lng": 77.7062826 },
-    {
-      "name": "Chikkalasandra Bus Station",
-      "lat": 12.9151671,
-      "lng": 77.552159
-    },
-    {
-      "name": "Krupanidhi College",
-      "lat": 12.9142111,
-      "lng": 77.72390037335295
-    },
-    {
-      "name": "Kadugodi Bus Station",
-      "lat": 12.995708,
-      "lng": 77.75850558821469
-    },
-    { "name": "SI Apartment (HSR)", "lat": 12.916641, "lng": 77.6292687 },
-    { "name": "Hope Farm,", "lat": 12.9828923, "lng": 77.75331443178575 },
-    { "name": "Uttarahalli", "lat": 12.9055682, "lng": 77.5455438 },
-    { "name": "Kadigodi", "lat": 12.404382511102805, "lng": 77.62779627572883 },
+    { "name": "Mallehwaram", "lat": 0, "lng": 0 },
+    { "name": "Modi Hospital", "lat": "12.9975102", "lng": "77.546099" },
+    { "name": "MRC College,Coles Park,Maruti seva nagar", "lat": 0, "lng": 0 },
+    { "name": "PES College", "lat": "12.9350701", "lng": "77.5370613" },
+    { "name": "Vijayangara", "lat": 0, "lng": 0 },
+    { "name": "Domlur.", "lat": "12.9624669", "lng": "77.6381958" },
+    { "name": "Swastik ,KR Circle", "lat": 0, "lng": 0 },
+    { "name": "Doddanekunte", "lat": 0, "lng": 0 },
+    { "name": "Shivajinagara Bus Station", "lat": 0, "lng": 0 },
+    { "name": "BTM Layout", "lat": "12.9151772", "lng": "77.6102821" },
     {
       "name": "Central silk Board",
-      "lat": 12.91614375,
-      "lng": 77.62113085110673
+      "lat": "12.91614375",
+      "lng": "77.62113085110673"
     },
-    { "name": "Jayanagara 4th Block", "lat": 12.9277036, "lng": 77.5835147 },
+    { "name": "HAL Main Gate", "lat": "12.9585125", "lng": "77.6660265" },
+    { "name": "Majestic (KBS)", "lat": 0, "lng": 0 },
+    { "name": "Electronic City Wipro Gate", "lat": 0, "lng": 0 },
+    { "name": "Naryana Hurdalaya", "lat": 0, "lng": 0 },
+    { "name": "Kalyana Nagara.", "lat": "12.9676588", "lng": "77.5238617" },
     {
-      "name": "Sri Sri Sathya Sai Hospital,",
-      "lat": 12.973461050000001,
-      "lng": 77.75111514194242
+      "name": "Kadugodi Bus Station",
+      "lat": "12.995708",
+      "lng": "77.75850558821469"
     },
+    { "name": "Corporation,Banashankari", "lat": 0, "lng": 0 },
+    { "name": "Nagarabavi Circle", "lat": 0, "lng": 0 },
+    { "name": "Nanjappa Circle,", "lat": "12.9604441", "lng": "77.6010513" },
     {
-      "name": "Sri Sathya Sai Hospital",
-      "lat": 12.973461050000001,
-      "lng": 77.75111514194242
+      "name": "Kundalahalli Gate,Sri Sri Sathya Sai Hospital.",
+      "lat": 0,
+      "lng": 0
     },
-    { "name": "Varthur", "lat": 12.9406152, "lng": 77.7469937 },
-    { "name": "KBS", "lat": 12.9376675, "lng": 77.5492313 },
-    { "name": "Hebbal", "lat": 13.0382184, "lng": 77.5919 },
-    { "name": "Hebbala", "lat": 13.0383248, "lng": 77.5890628 },
-    { "name": "Chamrajpet", "lat": 12.9569966, "lng": 77.5633682 },
-    {
-      "name": "Sri Sri Sathya Sai Hospital",
-      "lat": 12.973461050000001,
-      "lng": 77.75111514194242
-    },
-    {
-      "name": "Chowdeshwari Bus Station",
-      "lat": 12.480147650997205,
-      "lng": 77.38609998405758
-    },
-    { "name": "Adugodi", "lat": 12.9428472, "lng": 77.6104155 },
-    { "name": "Kattariguppe", "lat": 13.4699551, "lng": 77.7958812 },
-    {
-      "name": "Mayo Hall Manipal Hospital",
-      "lat": 12.449839943063482,
-      "lng": 77.83149463963963
-    },
-    {
-      "name": "Mallehwaram",
-      "lat": 12.373349604473894,
-      "lng": 77.97986647976568
-    },
-    {
-      "name": "Yeshwanthpura Bus Station",
-      "lat": 12.431978398441212,
-      "lng": 77.5756496290273
-    },
-    { "name": "Domlur.", "lat": 12.9624669, "lng": 77.6381958 },
-    { "name": "Yeshwanthpura", "lat": 13.02560935, "lng": 77.55410684919815 },
-    { "name": "Yeshwantpura", "lat": 13.0232943, "lng": 77.54983068647613 },
-    {
-      "name": "Hombegowda Police Station",
-      "lat": 12.348526459936728,
-      "lng": 77.31033073105925
-    },
+    { "name": "Banashankari Stage", "lat": "12.932708", "lng": "77.5462535" },
+    { "name": "Attiguppe", "lat": "12.9628474", "lng": "77.5291685" },
+    { "name": "Nelamangala", "lat": "13.0953024", "lng": "77.3963586" },
+    { "name": "Corporation,Domlur HAL Main Gate", "lat": 0, "lng": 0 },
+    { "name": "Hosakerehalli Cross", "lat": "12.9326699", "lng": "77.5453184" },
+    { "name": "DR.AIT", "lat": "12.9645411", "lng": "77.50608019141791" },
+    { "name": "KBS", "lat": "12.9376675", "lng": "77.5492313" },
     {
       "name": "Narayana Hrudayalaya",
-      "lat": 12.809031449999999,
-      "lng": 77.6948972565973
+      "lat": "12.809031449999999",
+      "lng": "77.6948972565973"
     },
+    { "name": "Hebbala", "lat": "13.0383248", "lng": "77.5890628" },
+    { "name": "Electronicity", "lat": 0, "lng": 0 },
     {
-      "name": "Kathriguppe Cross",
-      "lat": 12.39683967427346,
-      "lng": 77.25581157658637
+      "name": "Johnson Market",
+      "lat": "12.9641785",
+      "lng": "77.60616060618568"
     },
-    { "name": "Yelahanka", "lat": 13.1006982, "lng": 77.5963454 },
+    { "name": "Kengeri Housing Board QRTS", "lat": 0, "lng": 0 },
+    { "name": "Siddapura", "lat": "12.9542596", "lng": "77.7309743" },
+    { "name": "HAL Main Gate,", "lat": "12.9585125", "lng": "77.6660265" },
+    { "name": "Chandapura.", "lat": "12.8004439", "lng": "77.7062826" },
     {
-      "name": "Basaveshwarnagara bus stand",
-      "lat": 12.411823646838833,
-      "lng": 77.13811925053994
+      "name": "Bannerghatta National Park",
+      "lat": "12.53290595",
+      "lng": "77.54619068920488"
+    },
+    { "name": "Malleshwaram", "lat": "13.0027353", "lng": "77.5703253" },
+    { "name": "Bommanahalli", "lat": "12.9089453", "lng": "77.6239038" },
+    { "name": "Hebbal", "lat": "13.0382184", "lng": "77.5919" },
+    { "name": "Marathhahalli Bridge", "lat": 0, "lng": 0 },
+    { "name": "SI Apartment (HSR)", "lat": "12.916641", "lng": "77.6292687" },
+    { "name": "Kundala Halli", "lat": 0, "lng": 0 },
+    { "name": "Basaveshwara Nagar", "lat": "12.9931607", "lng": "77.5394749" },
+    { "name": "Mayo Hall", "lat": "12.973855", "lng": "77.6112422" },
+    { "name": "K.R.Market", "lat": "12.9608898", "lng": "77.5746822" },
+    {
+      "name": "Manipal Hospital",
+      "lat": "12.998229649999999",
+      "lng": "77.69307898403069"
+    },
+    { "name": "Koramangala 80Ft Road", "lat": 0, "lng": 0 },
+    { "name": "Dell IT Complex ", "lat": 0, "lng": 0 },
+    { "name": "Vijayanagara", "lat": "12.9709559", "lng": "77.5374044" },
+    { "name": "Jigani", "lat": "12.7852528", "lng": "77.6380931" },
+    { "name": "Hope Farm,", "lat": "12.9828923", "lng": "77.75331443178575" },
+    { "name": "Lalbagh Main Gate", "lat": "12.9537155", "lng": "77.5858442" },
+    {
+      "name": "Shanthi Nagar",
+      "lat": "12.95825395",
+      "lng": "77.6025706924521"
+    },
+    { "name": "Kattariguppe", "lat": "13.4699551", "lng": "77.7958812" },
+    { "name": "Attibele", "lat": "12.7782588", "lng": "77.7712834" },
+    {
+      "name": "Sri Sri Sathya Sai Hospital",
+      "lat": "12.973461050000001",
+      "lng": "77.75111514194242"
     },
     {
       "name": "Padamanabha nagar,Devegowda Petrol Bunk,BSK",
-      "lat": 12.475857154543776,
-      "lng": 77.83180759973578
+      "lat": 0,
+      "lng": 0
+    },
+    { "name": "Chandapura", "lat": "12.8004439", "lng": "77.7062826" },
+    {
+      "name": "Sri Sathya Sai Hospital",
+      "lat": "12.973461050000001",
+      "lng": "77.75111514194242"
+    },
+    { "name": "Jayanagar Bus tand", "lat": 0, "lng": 0 },
+    {
+      "name": "Jayanagar 9th Block East",
+      "lat": "12.9191456",
+      "lng": "77.5938653"
+    },
+    { "name": "Graphite India Ltd.", "lat": 0, "lng": 0 },
+    { "name": "J.P.Nagara PH VI", "lat": 0, "lng": 0 },
+    { "name": "Domlur", "lat": "12.9624669", "lng": "77.6381958" },
+    { "name": "Yeshwantpura", "lat": "13.0232943", "lng": "77.54983068647613" },
+    { "name": "Brigade Road", "lat": "12.9714852", "lng": "77.6069655" },
+    { "name": "Kundalahalli", "lat": "12.9684441", "lng": "77.7187843" },
+    {
+      "name": "Cauvery Bhavan,",
+      "lat": "12.972890199999998",
+      "lng": "77.58263044218306"
+    },
+    { "name": "BSK 3rd Stg 3rd Phase", "lat": 0, "lng": 0 },
+    { "name": "Singhasandra", "lat": 0, "lng": 0 },
+    { "name": "Kundanahalli Gate", "lat": "12.9558625", "lng": "77.7147175" },
+    { "name": "Mayo Hall,Tippasandra", "lat": 0, "lng": 0 },
+    { "name": "RV College", "lat": "12.9253246", "lng": "77.4991719" },
+    {
+      "name": "Jayanagara 4th Block",
+      "lat": "12.9277036",
+      "lng": "77.5835147"
     },
     {
-      "name": "Kundanahalli Gate,Sri Sathhya Sai Hospital",
-      "lat": 12.234531571376621,
-      "lng": 77.77211791551133
+      "name": "Chikkalasandra Bus Station",
+      "lat": "12.9151671",
+      "lng": "77.552159"
     },
+    { "name": "Kenchenhalli Gate", "lat": 0, "lng": 0 },
     {
-      "name": "Padamanabhanagar,Devegowda Petrol Bunk,BSK BDA Complex,Mono Type",
-      "lat": 12.474296889544926,
-      "lng": 77.84043811548429
+      "name": "Electronic City",
+      "lat": "12.848759900000001",
+      "lng": "77.64825295827616"
     },
+    { "name": "Hulimavu Gate", "lat": "12.8816224", "lng": "77.5960134" },
+    { "name": "Kumaraswamy Layout,", "lat": "12.9081487", "lng": "77.5553179" },
+    { "name": "Hombegowda Police Station", "lat": 0, "lng": 0 },
+    { "name": "Kadigodi", "lat": 0, "lng": 0 },
     {
-      "name": "Yelahanka Sat Town PH V",
-      "lat": 12.400162626274692,
-      "lng": 77.73882442875139
+      "name": "Wilson Garden Police Station",
+      "lat": "12.9501904",
+      "lng": "77.59609214223858"
     },
-    { "name": "Vijayanagara.", "lat": 12.9709559, "lng": 77.5374044 },
-    {
-      "name": "Jn. of 80ft Road,J n of Dupanahalli,HAL Main Gate,Marathahalli Bridge",
-      "lat": 12.000894243107089,
-      "lng": 77.96906442565917
-    },
-    { "name": "AECS Layout", "lat": 12.964118, "lng": 77.7130369 },
-    { "name": "Brigade Road", "lat": 12.9714852, "lng": 77.6069655 },
-    {
-      "name": "Jn. of Sarjapura Road",
-      "lat": 12.438128495948634,
-      "lng": 77.02781214891795
-    },
-    { "name": "Hulimavu Gate", "lat": 12.8816224, "lng": 77.5960134 },
-    {
-      "name": "Electronic City (PH II)",
-      "lat": 12.848759900000001,
-      "lng": 77.64825295827616
-    },
-    { "name": "Agara", "lat": 13.0386734, "lng": 77.6468085 },
-    { "name": "Indian Express", "lat": 12.98359, "lng": 77.5969266 },
-    {
-      "name": "Singhasandra",
-      "lat": 12.221900934158182,
-      "lng": 77.31857911641875
-    },
+    { "name": "Marathahalli", "lat": "12.9552572", "lng": "77.6984163" },
+    { "name": "Chandra Layout", "lat": "12.965293", "lng": "77.5181551" },
+    { "name": "Chamrajpet", "lat": "12.9569966", "lng": "77.5633682" },
+    { "name": "Vidyaranyapura", "lat": "13.0766407", "lng": "77.5577315" },
+    { "name": "K.R.Puram Rly.Stn,Marathhalli Bridge", "lat": 0, "lng": 0 },
     {
       "name": "Avalahalli BDA Park",
-      "lat": 12.942864700000001,
-      "lng": 77.54300218319841
+      "lat": "12.942864700000001",
+      "lng": "77.54300218319841"
     },
-    { "name": "Kundanahalli Gate", "lat": 12.9558625, "lng": 77.7147175 },
+    { "name": "Anekal", "lat": "12.799122", "lng": "77.68060437921743" },
     {
-      "name": "J.P.Nagara PH VI",
-      "lat": 12.323846387941124,
-      "lng": 77.94722845042051
+      "name": "M.M.Industries",
+      "lat": "12.93051495",
+      "lng": "77.57343052356869"
     },
-    { "name": "Jayanagar 9th East Block", "lat": 12.917589, "lng": 77.5948906 },
     {
-      "name": "Graphite India Ltd",
-      "lat": 12.140982185055616,
-      "lng": 77.2402213783834
+      "name": "Majestic (KBS) Wilson Garden Police Station",
+      "lat": 0,
+      "lng": 0
+    },
+    { "name": "marathahalli bridge", "lat": "12.9569237", "lng": "77.7011194" },
+    { "name": "Basavewshwaranagar", "lat": 0, "lng": 0 },
+    { "name": "Kalyanagara Bus Stand", "lat": 0, "lng": 0 },
+    { "name": "Marathalli Bridge", "lat": 0, "lng": 0 },
+    { "name": "Uttarahalli", "lat": "12.9055682", "lng": "77.5455438" },
+    { "name": "Marathahalli,", "lat": "12.9552572", "lng": "77.6984163" },
+    {
+      "name": "Nagarabhavi (BDA Complex)",
+      "lat": "12.9795534",
+      "lng": "77.5106479"
+    },
+    { "name": "BSK", "lat": "12.8957037", "lng": "77.555019" },
+    { "name": "K.R.Circle", "lat": "12.975957", "lng": "77.5871905" },
+    { "name": "Jn. of Sarjapura Road", "lat": 0, "lng": 0 },
+    { "name": "Devasandra", "lat": "12.7572271", "lng": "77.6472795" },
+    {
+      "name": "Jn. of 80ft Road,J n of Dupanahalli,HAL Main Gate,Marathahalli Bridge",
+      "lat": 0,
+      "lng": 0
+    },
+    { "name": "Graphite India Ltd", "lat": 0, "lng": 0 },
+    {
+      "name": "Electronic City (PH II)",
+      "lat": "12.848759900000001",
+      "lng": "77.64825295827616"
+    },
+    { "name": "Jalahalli Cross,", "lat": "13.0400428", "lng": "77.51846" },
+    {
+      "name": "Nagarabhavi BDA Complex",
+      "lat": "12.9795534",
+      "lng": "77.5106479"
+    },
+    { "name": "Varthur", "lat": "12.9406152", "lng": "77.7469937" },
+    { "name": "ITPL", "lat": "12.9876616", "lng": "77.7369153" },
+    { "name": "Hoskere Halli Cross,", "lat": 0, "lng": 0 },
+    {
+      "name": "Padamanabhanagar,Devegowda Petrol Bunk,BSK BDA Complex,Mono Type",
+      "lat": 0,
+      "lng": 0
+    },
+    { "name": "Mayo Hall Manipal Hospital", "lat": 0, "lng": 0 },
+    { "name": "Kuvempu Nagar", "lat": "13.07319265", "lng": "77.541713406882" },
+    { "name": "Vijayanagar", "lat": "12.9718886", "lng": "77.54578883887129" },
+    { "name": "Hebbagodi.", "lat": "12.8267016", "lng": "77.6799745" },
+    { "name": "Basaveshwarnagara bus stand", "lat": 0, "lng": 0 },
+    { "name": "Vijayanagara.", "lat": "12.9709559", "lng": "77.5374044" },
+    {
+      "name": "Banashankari",
+      "lat": "12.965283249999999",
+      "lng": "77.59445195"
+    },
+    { "name": "AECS Layout", "lat": "12.964118", "lng": "77.7130369" },
+    { "name": "Electronic City (Wipro Gate)", "lat": 0, "lng": 0 },
+    { "name": "Yeshwanthpura Bus Station", "lat": 0, "lng": 0 },
+    {
+      "name": "Krupanidhi College",
+      "lat": "12.9142111",
+      "lng": "77.72390037335295"
+    },
+    { "name": "K.R.Puram Rly.Stn", "lat": 0, "lng": 0 },
+    {
+      "name": "Kalyani Magnum (JP Nagar)",
+      "lat": "12.8993766",
+      "lng": "77.5968829"
+    },
+    { "name": "Hebbala Ring Road", "lat": "12.9199125", "lng": "77.6430145" },
+    { "name": "Hope Form", "lat": 0, "lng": 0 },
+    { "name": "Central Talkies", "lat": 0, "lng": 0 },
+    { "name": "III BTM Layout", "lat": "12.9151772", "lng": "77.6102821" },
+    { "name": "BEML Complex", "lat": "12.920158", "lng": "77.5204954" },
+    {
+      "name": "Central Silk Board",
+      "lat": "12.91614375",
+      "lng": "77.62113085110673"
+    },
+    { "name": "Srinagara", "lat": "12.9442619", "lng": "77.5545923" },
+    {
+      "name": "Maharani\u2019s College",
+      "lat": "12.9792324",
+      "lng": "77.58378472740652"
+    },
+    { "name": "Mekhri Circle", "lat": "13.0144437", "lng": "77.5838814" },
+    {
+      "name": "Chikkabanavara",
+      "lat": "13.0828877",
+      "lng": "77.5079901351852"
+    },
+    { "name": "Bommanahalli,Agara,Marathahalli Bridge", "lat": 0, "lng": 0 },
+    {
+      "name": "Shanti Nagar Bus Station",
+      "lat": "12.954326250000001",
+      "lng": "77.59263475716921"
+    },
+    { "name": "Adugodi", "lat": "12.9428472", "lng": "77.6104155" },
+    {
+      "name": "Electronic City (Infosys)",
+      "lat": "12.8447999",
+      "lng": "77.66323896266928"
+    },
+    {
+      "name": "Nagawara Road,Channasandra,KR Puram Rly Station",
+      "lat": 0,
+      "lng": 0
     },
     {
       "name": "Electronic City,",
-      "lat": 12.848759900000001,
-      "lng": 77.64825295827616
+      "lat": "12.848759900000001",
+      "lng": "77.64825295827616"
     },
-    { "name": "Kundalahalli", "lat": 12.9684441, "lng": 77.7187843 },
-    { "name": "RV College", "lat": 12.9253246, "lng": 77.4991719 },
-    { "name": "Bommanahalli", "lat": 12.9089453, "lng": 77.6239038 },
-    { "name": "Basaveshwara Nagar", "lat": 12.9931607, "lng": 77.5394749 }
+    { "name": "Mahilaseva Samaja", "lat": 0, "lng": 0 },
+    { "name": "Hosa Road", "lat": "12.8747372", "lng": "77.668964" },
+    { "name": "BTM Layout,Agara,Kundalahalli", "lat": 0, "lng": 0 },
+    {
+      "name": "Krupanidhi college",
+      "lat": "12.9142111",
+      "lng": "77.72390037335295"
+    },
+    { "name": "Konappana Agrahara", "lat": "12.8528618", "lng": "77.668169" },
+    { "name": "C.V.Raman Nagara", "lat": "12.9856596", "lng": "77.6638971" },
+    { "name": "Military Accounts", "lat": "12.9655617", "lng": "77.6173316" },
+    { "name": "Mahalaksmi Layout", "lat": 0, "lng": 0 },
+    { "name": "Gunjur", "lat": "13.4279345", "lng": "77.5131493" },
+    { "name": "Agara.", "lat": "13.0386734", "lng": "77.6468085" },
+    { "name": "Yelahanka", "lat": "13.1006982", "lng": "77.5963454" },
+    { "name": "Corporation", "lat": "12.9685004", "lng": "77.5865073" },
+    {
+      "name": "Kundanahalli Gate,Sri Sathhya Sai Hospital",
+      "lat": 0,
+      "lng": 0
+    },
+    { "name": "HAL Kalyanamantapa", "lat": "12.9546175", "lng": "77.6824023" },
+    { "name": "Indian Express", "lat": "12.98359", "lng": "77.5969266" },
+    { "name": "Bangalore Club", "lat": "12.9664242", "lng": "77.5974834" },
+    { "name": "ISKON", "lat": "15.4047443", "lng": "75.07000709770068" },
+    {
+      "name": "Yeshwanthpura",
+      "lat": "13.02560935",
+      "lng": "77.55410684919815"
+    },
+    { "name": "Hoskerehalli Cross", "lat": "12.9339238", "lng": "77.5390368" },
+    { "name": "Binnamangala", "lat": "12.9839881", "lng": "77.6416769" },
+    { "name": "Sathyasai Hospital", "lat": 0, "lng": 0 },
+    { "name": "Banasawadi", "lat": "13.0150607", "lng": "77.3649316" },
+    { "name": "Madiwala", "lat": "12.9212269", "lng": "77.6179508" },
+    {
+      "name": "Sri Sri Sathya Sai Hospital,",
+      "lat": "12.973461050000001",
+      "lng": "77.75111514194242"
+    },
+    {
+      "name": "Electronic city Phase II",
+      "lat": "12.8419314",
+      "lng": "77.6754937"
+    },
+    { "name": "Cottonpet Hospital", "lat": "12.9678052", "lng": "77.5702672" },
+    { "name": "Chandra layout", "lat": "12.965293", "lng": "77.5181551" },
+    { "name": "Southend Circle", "lat": "12.9366676", "lng": "77.5771236" },
+    { "name": "Yelahanka Sat Town PH V", "lat": 0, "lng": 0 },
+    { "name": "ISRO Layout", "lat": "12.8974283", "lng": "77.5573828" },
+    { "name": "Bannerghatta", "lat": "12.8403298", "lng": "77.5941657" },
+    { "name": "Dasarahalli,Makali", "lat": 0, "lng": 0 },
+    {
+      "name": "Jayanagar 9th East Block",
+      "lat": "12.917589",
+      "lng": "77.5948906"
+    },
+    { "name": "Kathriguppe Cross", "lat": 0, "lng": 0 },
+    { "name": "Nagendra Block,", "lat": "12.942029", "lng": "77.5520036" },
+    { "name": "Mallesh Palya", "lat": "12.9748146", "lng": "77.6703311" },
+    { "name": "Marathahalli Bridge", "lat": "12.9569237", "lng": "77.7011194" },
+    { "name": "Corporation,HAL Main Gate", "lat": 0, "lng": 0 },
+    { "name": "Sujatha", "lat": "15.3509212", "lng": "75.1341008" }
   ]
 }
