@@ -8,6 +8,7 @@ import {
     TouchableHighlight,
     Alert,
     TouchableOpacity,
+    ScrollView,
 } from "react-native";
 import { setJSExceptionHandler } from "react-native-exception-handler";
 import MapView, { MAP_TYPES, Marker } from "react-native-maps";
@@ -18,9 +19,8 @@ import { useNavigation } from "@react-navigation/core";
 import MapModal from "../components/MapModal";
 import stops from "../stops.json";
 import { ErrorBoundary } from "../components/ErrorBoundary";
-import { ScrollView } from "react-native-gesture-handler";
 import axios from "axios";
-import { useStateValue ,dispatch} from "../StateProvider";
+import { useStateValue, dispatch } from "../StateProvider";
 
 const styles = StyleSheet.create({
     container: {
@@ -146,16 +146,31 @@ const MapScreen = () => {
         })();
     }, []);
 
-    
+    useEffect(() => {
+        var tempMarkers = [];
+        buses.forEach((bus) => {
+            let filteredMarkers = stops.places.filter((item) => {
+                return item.name === bus.StopCrossed;
+            });
+            tempMarkers.push({
+                title: filteredMarkers[0].name,
+                latitude: filteredMarkers[0].lat,
+                longitude: filteredMarkers[0].lng,
+            });
+        });
+        setMarkers(tempMarkers);
+        console.log("Markers", markers);
+    }, [buses]);
+
     const getBuses = (s) => {
         console.log("Bus stop ", s);
         setDestination(s);
         s = s.replace(" ", "%20");
         console.log("After replacing ", s);
-        var url = `https://speeeeeeeeds.herokuapp.com/getbuses?sourcelat=${location.coords.latitude}&sourcelng=${location.coords.longitude}&dest=${s}&sort=${pref}`;
+        var url = `https://speeeeeeeeds.herokuapp.com/getbuses?sourcelat=12.9624669&sourcelng=77.6381958&dest=${s}&sort=${pref}`;
         console.log(url);
         axios.get(url).then((res) => {
-            console.log("res",res.data);
+            console.log("res", res.data);
             setBuses(res.data);
         });
         setToggle(false);
@@ -196,7 +211,7 @@ const MapScreen = () => {
                     style={styles.map}
                     showsUserLocation={true}
                     provider="google"
-                    annotations={markersInit}
+                    // annotations={markersInit}
                 >
                     <ErrorBoundary>
                         {/* <UrlTile
@@ -274,7 +289,6 @@ const MapScreen = () => {
                         onPress={() => {
                             setPref("price");
                             getBuses(destination);
-
                         }}
                     >
                         <View>
@@ -300,37 +314,54 @@ const MapScreen = () => {
                         <Text style={styles.buttonText}>Capacity</Text>
                     </TouchableHighlight>
                 </View>
-                {toggle ? <ScrollView>
-                    {console.log("toggle", toggle)}
-                    {filteredData.map((stop, index) => (
-                        <TouchableHighlight
-                            key={index}
-                            style={tw`flex-row mt-3`}
-                            underlayColor="black"
-                            onPress={() => {
-                                getBuses(stop.name);
-                            }}
-                        >
-                            <View>
-                                <Text style={tw`font-black mt-2 mx-3 w-80`}>
-                                    {stop.name}
-                                </Text>
-                            </View>
-                        </TouchableHighlight>
-                    ))}
-                </ScrollView> : 
-                <ScrollView>
-                {buses.map(bus => {
-                    return (
-                    <TouchableOpacity style={tw` mx-10 mt-2 rounded p-2 shadow-lg bg-gray-900`} onPress={()=>pointBuses(buses)} key={bus.BusId}>
-                        <View style={tw`flex-row`}>
-                        <Icon name='bus' color="white" type='font-awesome' />
-                        <Text style={tw`ml-4 text-white font-bold text-xl`}>{bus.BusId}</Text>
-                        </View>
-                    </TouchableOpacity>
-                    )
-                })}
-                </ScrollView>}
+                {toggle ? (
+                    <ScrollView>
+                        {console.log("toggle", toggle)}
+                        {filteredData.map((stop, index) => (
+                            <TouchableHighlight
+                                key={index}
+                                style={tw`flex-row mt-3`}
+                                underlayColor="black"
+                                onPress={() => {
+                                    getBuses(stop.name);
+                                }}
+                            >
+                                <View>
+                                    <Text style={tw`font-black mt-2 mx-3 w-80`}>
+                                        {stop.name}
+                                    </Text>
+                                </View>
+                            </TouchableHighlight>
+                        ))}
+                    </ScrollView>
+                ) : (
+                    <ScrollView>
+                        {buses
+                            ? buses.map((bus) => {
+                                  return (
+                                      <TouchableOpacity
+                                          style={tw` mx-10 mt-2 rounded p-2 shadow-lg bg-gray-900`}
+                                          onPress={() => pointBuses(buses)}
+                                          key={bus.BusId}
+                                      >
+                                          <View style={tw`flex-row`}>
+                                              <Icon
+                                                  name="bus"
+                                                  color="white"
+                                                  type="font-awesome"
+                                              />
+                                              <Text
+                                                  style={tw`ml-4 text-white font-bold text-xl`}
+                                              >
+                                                  {bus.BusId}
+                                              </Text>
+                                          </View>
+                                      </TouchableOpacity>
+                                  );
+                              })
+                            : null}
+                    </ScrollView>
+                )}
             </MapModal>
         </>
     );
