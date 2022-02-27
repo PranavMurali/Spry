@@ -16,3 +16,35 @@ The admin/Fleet manager is able to track the entire convoy of buses , with avail
 - Expo CLI
 - Expo adjoint system call libraries (***location***)
 
+### Map Home :
+![alt](./readme/Map_Home.png)
+
+## Map with destination Modal:
+![alt](./readme/Map_modal.png)
+
+## Map with price sorted buses:
+![alt](./readme/Price_Sorted_Buses.png)
+
+
+## Map with Bus Tracking Ping:
+![alt](./readme/Map_Ping.png)
+
+## Main Menu Screen:
+![alt](./readme/Menu.png)
+
+## Main Admin Menu:
+![alt](./readme/Admin_menu.png)
+
+## Fleet Console:
+![alt](./readme/Fleet.png)
+
+## Admin Console:
+![alt](./readme/Admin_Console.png)
+
+## Timeline:
+![alt](./readme/Timeline.png)
+
+```
+Note:
+- To run the application on a device , Google maps API key is required.
+```
