@@ -39,7 +39,7 @@ The admin/Fleet manager is able to track the entire convoy of buses , with avail
 ![alt](./readme/Fleet.png)
 
 ## Admin Console:
-![alt](./readme/Admin_Console.png)
+![alt](./readme/Admin_console.png)
 
 ## Timeline:
 ![alt](./readme/Timeline.png)
